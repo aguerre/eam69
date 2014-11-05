@@ -1,0 +1,4 @@
+eam_default:
+    resource: "@EAMDefaultBundle/Controller/DefaultController.php"
+    type: annotation
+
