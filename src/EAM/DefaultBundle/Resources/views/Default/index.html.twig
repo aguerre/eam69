@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        {% stylesheets
+        '@bootstrap'
+        '@RadioMetalDefaultBundle/Resources/public/css/radiometal.css'
+        '@RadioMetalDefaultBundle/Resources/public/css/jHtmlArea.css'
+        filter='yui_css'
+    %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+    {% endstylesheets %}
         <meta charset="UTF-8">
         <title>EAM - En Avant marche 69</title>
     </head>
