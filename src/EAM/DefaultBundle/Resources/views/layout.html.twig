@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+    {% stylesheets
+        '@bootstrap'
+        '@EAMDefaultBundle/Resources/public/css/eam.css'
+    %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+    {% endstylesheets %}
+        <meta charset="UTF-8">
+        <title>EAM - En Avant marche 69</title>
+    </head>
+    <body>
+        {% block body %}
+        {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
+    </body>
+</html>
