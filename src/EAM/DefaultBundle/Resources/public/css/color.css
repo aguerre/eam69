@@ -1,0 +1,43 @@
+
+/* Theme Color */
+
+.color, .colorhover:hover, .latest-album article:hover .text h3 a, .widget-category ul li:hover a,
+.post-option li a:hover, .blog-listing article:hover .text h3 a, .bottom-text .sec .desc-detail a:hover,
+.portfolio-filter ul li div figcaption a{
+	color: #e14e3d !important;
+}
+
+/* Theme Background Color */
+.caption h1, .fontawesome-icon-list a.fa-hover:hover, .bghover:hover, .navigation ul > li:before, .navigation ul > li:after, .latest-album article:hover .text .icon-plus,.curcul-cel ul li i,
+.navigation ul ul, .featured-artist article:hover .user-text a.user-icon, .table tbody tr:hover, .blog-listing .social-network a:hover,
+.featured-artist article figure .social-network a:hover, .tag-cloud a:hover, .widget-archive ul li:hover, .event-orgnizer article:hover .text,
+.event-detail article figure figcaption .social-network a:hover, .event-orgnizer article figure figcaption .social-network a:hover,.pagination ul li a:hover,
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus{
+	background-color: #e14e3d !important;
+}
+
+/* Theme Border Color */
+.bordercolor, .borderhover:hover, .widget-category ul li:hover a, .date-inn,.portfolio-filter ul li div figcaption a{
+	border-color: #e14e3d !important;
+}
+
+/* Tranparent Border Color */
+.navigation ul ul:before{
+	border-color: transparent transparent #e14e3d transparent !important;
+}
+
+.bgcolor{
+	background-color: #e14e3d;
+}
+.green{
+	background-color:green;
+}
+.green-color{
+	color:green;
+}
+.yellow{
+	background-color:yellow;
+}
+.yellow-color{
+	color:yellow;
+}

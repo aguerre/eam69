@@ -1,4 +1,760 @@
 {% extends 'EAMDefaultBundle::layout.html.twig' %}
 {% block body %}
-
+<div class="wrapper">
+    <!-- Header Start -->
+    <header id="header">
+        <!-- Top Strip Start -->
+        <div class="top-strip">
+            <!-- Container Start -->
+            <div class="container">
+                <!-- Login Section Start -->
+                <div class="login-sec">
+                    <div class="sign-in">
+                        <P><a href="#myModal" role="button" data-toggle="modal" class="colorhover"><i class="fa fa-sign-in"></i>SIGN IN</a> &nbsp;<a class="colorhover" href="#"><i class="fa fa-user"></i>CREATE ACCOUNT</a></P>
+                        <div class="search">
+                            <a href="#myModaltwo" role="button" data-toggle="modal"><i class="fa fa-search"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Login Section End -->
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Top Strip End -->
+        <!-- Header Middle Section Start -->
+        <div class="head-middle-sec">
+            <!-- Container Start -->
+            <div class="container">
+                <!-- Logo Start -->
+                <div class="logo">
+                    <a href="{{ path('eam_default_default_index') }}"><img src="images/logo.png" alt=""></a>
+                </div>
+                <!-- Logo End -->
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Header Middle Section End -->
+        <!-- Navigation Start -->
+        <div class="navigation">
+            <div class="container">
+                <a class="cs-click-menu webkit"><i class="fa fa-bars"></i></a>
+                <ul id="menus">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="album.html">Albums</a>
+                        <ul>
+                            <li><a href="album-detail.html">Album Detail</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html">Our Blog</a>
+                        <ul>
+                            <li><a href="blog-full.html">Blog Full</a></li>
+                            <li><a href="blog-masnory.html">Blog Masnory</a></li>
+                            <li><a href="blog-detail.html">Blog Detail</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="event.html">Music Event</a>
+                        <ul>
+                            <li><a href="event-detail.html">Event Detail</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Gallery</a>
+                        <ul>
+                            <li><a href="gallery-two-col.html">Two Column</a></li>
+                            <li><a href="gallery-three-col.html">Three Column</a></li>
+                            <li><a href="gallery-four-col.html">Four Column</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Shortcodes</a>
+                        <ul>
+                            <li><a href="shortcode-accordian.html">Accordion</a></li>
+                            <li><a href="shortcode-alert.html">Alert</a></li>
+                            <li><a href="shortcode-column.html">Column</a></li>
+                            <li><a href="shortcode-dropcap.html">Dropcap</a></li>
+                            <li><a href="shortcode-fontfamily.html">Font Family</a></li>
+                            <li><a href="shortcode-highlighter.html">Highlighter</a></li>
+                            <li><a href="shortcode-icons.html">Icons</a></li>
+                            <li><a href="shortcode-list.html">List Style</a></li>
+                            <li><a href="shortcode-separator.html">Separator</a></li>
+                            <li><a href="shortcode-social.html">Social Icons</a></li>
+                            <li><a href="shortcode-table.html">Table</a></li><li><a href="shortcode-tabs.html">Tabs</a></li>
+                            <li><a href="shortcode-albums-teams.html">Albums & Teams</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Navigation End -->
+    </header>
+    <!--- Header End -->
+    <div class="clear"></div>
+    <!--- Banner Start -->
+    <div class="banner">
+        <div class="flexslider">
+           <ul class="slides">
+            <li>
+                <img src="images/banner1.jpg" alt="" />
+                <div class="caption">
+                    <h1>ONE DIRECTION ELECTRONIC</h1>
+                    <p>CAPE TOWN ELECTRONIC MUSIC FESTIVAL 2013 CAPE TOWN ELECTRONIC MUSIC FESTIVAL 2013</p>
+                </div>
+            </li>
+            <li>
+                <img src="images/banner2.jpg" alt="" />
+                <div class="caption">
+                    <h1>ROCK THIS NIGHT</h1>
+                    <p>CAPE TOWN ELECTRONIC MUSIC FESTIVAL 2013 CAPE TOWN ELECTRONIC MUSIC FESTIVAL 2013</p>
+                </div>
+            </li>
+            <li>
+                <img src="images/banner3.jpg" alt="" />
+                <div class="caption">
+                    <h1>WE ARE HERE FOR PARTY</h1>
+                    <p>CAPE TOWN ELECTRONIC MUSIC FESTIVAL 2013 CAPE TOWN ELECTRONIC MUSIC FESTIVAL 2013</p>
+                </div>
+            </li>
+            <li>
+                <img src="images/banner4.jpg" alt="" />
+                <div class="caption">
+                    <h1>TONIGHT I AM LOVIN YOU</h1>
+                    <p>CAPE TOWN ELECTRONIC MUSIC FESTIVAL 2013 CAPE TOWN ELECTRONIC MUSIC FESTIVAL 2013</p>
+                </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <!--- Banner End -->
+    <!-- Player Start -->
+    <div class="plyer-sec webkit">
+    <!-- Audio Plyer Strat -->
+     <div class="audio-plyer webkit">
+            <div class="container">
+                <div id="player">
+                    <div id="jquery_jplayer_n" class="jp-jplayer"></div>
+                    <div id="jp_container_n" class="jp-audio">
+                        <div class="jp-type-playlist">
+                            <div class="jp-gui">
+                                <div class="jp-interface">
+                                    <div class="jp-controls-holder">
+                                        <ul class="jp-controls audio-control">
+                                            <li>
+                                                <a href="javascript:;" class="jp-previous color" tabindex="1"> <em class="fa fa-backward"></em>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="jp-play color" tabindex="1"> <em class="fa fa-play"></em>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="jp-pause color" tabindex="1">
+                                                    <em class="fa fa-pause"></em>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="jp-next color" tabindex="1">
+                                                    <em class="fa fa-forward"></em>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="main-progress">
+                                            <div class="jp-progress">
+                                                <div class="jp-seek-bar">
+                                                    <div class="jp-play-bar bgcolor"></div>
+                                                </div>
+                                            </div>
+                                            <div class="jp-current-time"></div>
+                                            <div class="jp-duration"></div>
+                                            <div class="volume-wrap">
+                                                <a title="mute" tabindex="1" class="jp-mute" href="javascript:;"><em class="fa fa-volume-down"></em></a>
+                                                <a title="unmute" tabindex="1" class="jp-unmute" href="javascript:;" style="display: none;"><em class="fa fa-volume-off"></em></a>
+                                                <div class="jp-volume-bar">
+                                                    <div class="jp-volume-bar-value bgcolor" style="width: 80%;"></div>
+                                                </div>
+                                                <a title="max volume" tabindex="1" class="jp-volume-max" href="javascript:;"><em class="fa fa-volume-up"></em></a>
+                                            </div>
+                                            <a href="#playheader" class="jp-playlist-icon btntoggle webkit"><em class="fa fa-headphones fa-2x"></em><span class="color">CRAS LOBORTIS AUGUE-JHON DOE</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jp-playlist " id="playheader">
+                                <div class="wrapper-payerlsit">
+                                <ul>
+                                    <!-- The method Playlist.displayPlaylist() uses this unordered list -->                    
+                                    <li></li>
+                                </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   <!-- Audio Plyer End -->
+    </div>
+    <!-- Player End -->
+    <div class="clear"></div>
+    <!-- Content Start -->
+    <div class="content">
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Row Start -->
+            <div class="row">
+                <!-- Span12 Start -->
+                <div class="span12">
+                    <!-- Featured Start -->
+                    <div class="featured-artist">
+                        <div class="heading"><h2><span class="color">Featured</span> Artist</h2></div>
+                        <div class="minus-margin">
+                            <article>
+                                <figure>
+                                    <a href="#"><img src="images/featured1.jpg" alt=""></a>
+                                    <figcaption>
+                                        <a href="#"></a>
+                                        <div class="social-network">
+                                            <a href="#" class="facebook"><i class="fa fa-facebook fa-2x"></i></a>
+                                            <a href="#" class="twitter"><i class="fa fa-twitter fa-2x"></i></a>
+                                            <a href="#" class="vimeo"><i class="fa fa-youtube fa-2x"></i></a>
+                                            <a href="#" class="pin"><i class="fa fa-pinterest fa-2x"></i></a>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <div class="user-text">
+                                    <a class="user-icon webkit" href="#"><i class="fa fa fa-user fa-2x"></i></a>
+                                    <div class="sec">
+                                        <h4><a href="#">DJ Charlie White</a></h4>
+                                        <p>Deep House</p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <a href="#"><img src="images/featured2.jpg" alt=""></a>
+                                    <figcaption>
+                                        <a href="#"></a>
+                                        <div class="social-network">
+                                            <a href="#" class="facebook"><i class="fa fa-facebook fa-2x"></i></a>
+                                            <a href="#" class="twitter"><i class="fa fa-twitter fa-2x"></i></a>
+                                            <a href="#" class="vimeo"><i class="fa fa-youtube fa-2x"></i></a>
+                                            <a href="#" class="pin"><i class="fa fa-pinterest fa-2x"></i></a>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <div class="user-text">
+                                    <a class="user-icon webkit" href="#"><i class="fa fa fa-user fa-2x"></i></a>
+                                    <div class="sec">
+                                        <h4><a href="#">DJ Charlie White</a></h4>
+                                        <p>Deep House</p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <a href="#"><img src="images/featured3.jpg" alt=""></a>
+                                    <figcaption>
+                                        <a href="#"></a>
+                                        <div class="social-network">
+                                            <a href="#" class="facebook"><i class="fa fa-facebook fa-2x"></i></a>
+                                            <a href="#" class="twitter"><i class="fa fa-twitter fa-2x"></i></a>
+                                            <a href="#" class="vimeo"><i class="fa fa-youtube fa-2x"></i></a>
+                                            <a href="#" class="pin"><i class="fa fa-pinterest fa-2x"></i></a>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <div class="user-text">
+                                    <a class="user-icon webkit" href="#"><i class="fa fa fa-user fa-2x"></i></a>
+                                    <div class="sec">
+                                        <h4><a href="#">DJ Charlie White</a></h4>
+                                        <p>Deep House</p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <a href="#"><img src="images/featured4.jpg" alt=""></a>
+                                    <figcaption>
+                                        <a href="#"></a>
+                                        <div class="social-network">
+                                            <a href="#" class="facebook"><i class="fa fa-facebook fa-2x"></i></a>
+                                            <a href="#" class="twitter"><i class="fa fa-twitter fa-2x"></i></a>
+                                            <a href="#" class="vimeo"><i class="fa fa-youtube fa-2x"></i></a>
+                                            <a href="#" class="pin"><i class="fa fa-pinterest fa-2x"></i></a>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <div class="user-text">
+                                    <a class="user-icon webkit" href="#"><i class="fa fa fa-user fa-2x"></i></a>
+                                    <div class="sec">
+                                        <h4><a href="#">DJ Charlie White</a></h4>
+                                        <p>Deep House</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <!-- Featured End -->
+                </div>
+                <!-- Span12 End -->
+                <!-- Span8 Start -->
+                <div class="span8">
+                    <header class="heading"><h2><span class="color">From Our</span> Blog</h2></header>
+                    <div class="blog-v2 webkit">
+                        <article class="featured">
+                            <figure><a href="blog-detail.html"><img src="images/blogv21.jpg" alt=""></a></figure>
+                            <div class="clear"></div>
+                            <div class="text">
+                                <h3><a href="blog-detail.html" class="colorhover">DJ Charlie White</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                                <ul class="post-option webkit">
+                                    <li><span class="color"><i class="fa fa-calendar"></i>August 21 2013</span></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i>54 Comments</a></li>
+                                </ul>
+                                <a class="bgcolor nr-readmore" href="blog-detail.html">Read More</a>
+                            </div>
+                        </article>
+                        <div class="recent-post last-sec webkit">
+                            <article>
+                                <figure><a href="blog-detail.html"><img src="images/blog_slider_1.jpg" alt=""></a></figure>
+                                <div class="text">
+                                    <h3><a href="blog-detail.html" class="colorhover">Rush in Club</a></h3>
+                                    <p>Dorem ipsum dolor sit amet, conse tetur</p>
+                                    <ul class="post-option webkit">
+                                        <li><span class="color"><i class="fa fa-calendar"></i>May 17,2014</span></li>
+                                        <li><a href="#"><i class="fa fa-comments"></i>54 Comments</a></li>
+                                    </ul>
+                                  <a class="bgcolor nr-readmore" href="blog-detail.html">More</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure><a href="blog-detail.html"><img src="images/blog_slider_2.jpg" alt=""></a></figure>
+                                <div class="text">
+                                    <h3><a href="blog-detail.html" class="colorhover">On the Floor</a></h3>
+                                   <p>Dorem ipsum dolor sit amet, conse tetur</p>
+                                    <ul class="post-option webkit">
+                                        <li><span class="color"><i class="fa fa-calendar"></i>May 17,2014</span></li>
+                                        <li><a href="#"><i class="fa fa-comments"></i>54 Comments</a></li>
+                                    </ul>
+                                   <a class="bgcolor nr-readmore" href="blog-detail.html">More</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure><a href="blog-detail.html"><img src="images/blog_slider_3.jpg" alt=""></a></figure>
+                                <div class="text">
+                                    <h3><a href="blog-detail.html" class="colorhover">Party Tonight</a></h3>
+                                    <p>Dorem ipsum dolor sit amet, conse tetur</p>
+                                    <ul class="post-option webkit">
+                                        <li><span class="color"><i class="fa fa-calendar"></i>May 17,2014</span></li>
+                                        <li><a href="#"><i class="fa fa-comments"></i>54 Comments</a></li>
+                                    </ul>
+                                    <a class="bgcolor nr-readmore" href="blog-detail.html">More</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <!-- Span12 End -->
+                <!-- Span4 Start -->
+                <div class="span4">
+                    <div class="heading"><h2><span class="color">Recent </span> Posts</h2></div>
+                    <div class="blog-v2 webkit slide-view">
+                        <article class="featured">
+                            <figure>
+                                <div class="flexslider">
+                                  <ul class="slides">
+                                    <li>
+                                        <a href="blog-detail.html"><img src="images/blog_slider_1.jpg" alt=""></a>
+                                        <div class="clear"></div>
+                                        <div class="text">
+                                            <h3><a href="blog-detail.html" class="colorhover">DJ Charlie White</a></h3>
+                                            <p>Dorem ipsum dolor sit amet, consetetur sadips cing elitr, sed diam nonumy eirmod. Lorem ipsum dolor sit amet. </p>
+                                            
+                                            <a class="bgcolor nr-readmore" href="blog-detail.html">Read More</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="blog-detail.html"><img src="images/blog_slider_2.jpg" alt=""></a>
+                                        <div class="clear"></div>
+                                        <div class="text">
+                                            <h3><a href="blog-detail.html" class="colorhover">VJ Chio</a></h3>
+                                            <p>Aorem ipsum dolor sit amet, consetetur sadips cing elitr, sed diam nonumy eirmod. Lorem ipsum dolor sit amet. </p>
+                                            
+                                            <a class="bgcolor nr-readmore" href="blog-detail.html">Read More</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="blog-detail.html"><img src="images/blog_slider_3.jpg" alt=""></a>
+                                        <div class="clear"></div>
+                                        <div class="text">
+                                            <h3><a href="blog-detail.html" class="colorhover">DJ Alisha Brown</a></h3>
+                                            <p>Rorem ipsum dolor sit amet, consetetur sadips cing elitr, sed diam nonumy eirmod. Lorem ipsum dolor sit amet. </p>
+                                            <a class="bgcolor nr-readmore" href="blog-detail.html">Read More</a>
+                                        </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                            <figcaption class="bgcolor">20 <span>May</span></figcaption>
+                            </figure>
+                           
+                        </article>
+                    </div>
+                </div>
+                <!-- Span4 Start -->
+                <!-- Span12 Start -->
+                <div class="span12">
+                    <!-- Upcooming Event Start -->
+                    <div class="upcoming-event">
+                        <div class="heading"><h2><span class="color">Upcoming </span> Events</h2></div>
+                        <div class="minus-margin">
+                            <article>
+                                <div class="top-text">
+                                    <h3>Melbourne City Hall</h3>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+                                    <a class="bgcolor" href="event-detail.html">More</a>
+                                </div>
+                                <div class="bottom-text">
+                                    <figure><a href="event-detail.html"><img src="images/event1.jpg" alt=""></a></figure>
+                                    <div class="sec webkit">
+                                        <div class="desc-head">
+                                            <ul>
+                                                <li><span class="color">When</span> <p>30 September 2013 | 11:30PM</p></li>
+                                                <li><span class="color">where</span> <p>Massive Club London, Leytonstone 13</p></li>
+                                                <li><span class="color">Featuring</span> <p><a href="#">Etiam,</a> Porta, Sem malesuada, <a href="#">Mangna</a></p></li>
+                                                <li><span class="color">Tickets</span> <p>Free | <a href="#">Now Available</a></p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article>
+                                <div class="top-text">
+                                    <h3>Melbourne City Hall</h3>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+                                    <a class="bgcolor" href="event-detail.html">More</a>
+                                </div>
+                                <div class="bottom-text">
+                                    <figure><a href="event-detail.html"><img src="images/event2.jpg" alt=""></a></figure>
+                                    <div class="sec webkit">
+                                        <div class="desc-head">
+                                            <ul>
+                                                <li><span class="color">When</span> <p>30 September 2013 | 11:30PM</p></li>
+                                                <li><span class="color">where</span> <p>Massive Club London, Leytonstone 13</p></li>
+                                                <li><span class="color">Featuring</span> <p><a href="#">Etiam,</a> Porta, Sem malesuada, <a href="#">Mangna</a></p></li>
+                                                <li><span class="color">Tickets</span> <p>Free | <a href="#">Now Available</a></p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <!-- Upcooming Event End -->
+                </div>
+                <!-- Span12 End -->
+            </div>
+            <!-- Row End -->
+        </div>
+        <!-- Container End -->
+        <!-- Parallex Start -->
+        <div class="parallex-count margin-bottom" data-speed="2" data-type="background">
+            <!-- Container Start -->
+            <div class="container">
+                <div class="heading"><h2><span class="color">Next </span> Event</h2></div>
+                <div id="DateCountdown" class="date-count-down" data-date="2014-12-12 00:00:00"></div>
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Parallex End -->
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Row Start -->
+            <div class="row">
+                <!-- Span12 Start -->
+                <div class="span12">
+                    <!-- Latest Album Start -->
+                    <div class="latest-album">
+                        <div class="heading"><h2><span class="color">Latest </span> Album</h2></div>
+                        <div class="minus-margin">
+                            <article>
+                                <figure><a href="#"><img src="images/latest-album1.jpg" alt=""></a></figure>
+                                <div class="text webkit">
+                                    <div class="left-sec">
+                                        <h3><a href="#">Behind the Scens</a></h3>
+                                        <p>Nonumy eirmod tempor</p>
+                                    </div>
+                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure><a href="#"><img src="images/latest-album2.jpg" alt=""></a></figure>
+                                <div class="text webkit">
+                                    <div class="left-sec">
+                                        <h3><a href="#">Behind the Scens</a></h3>
+                                        <p>Nonumy eirmod tempor</p>
+                                    </div>
+                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure><a href="#"><img src="images/latest-album3.jpg" alt=""></a></figure>
+                                <div class="text webkit">
+                                    <div class="left-sec">
+                                        <h3><a href="#">Behind the Scens</a></h3>
+                                        <p>Nonumy eirmod tempor</p>
+                                    </div>
+                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure><a href="#"><img src="images/latest-album4.jpg" alt=""></a></figure>
+                                <div class="text webkit">
+                                    <div class="left-sec">
+                                        <h3><a href="#">Behind the Scens</a></h3>
+                                        <p>Nonumy eirmod tempor</p>
+                                    </div>
+                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure><a href="#"><img src="images/latest-album5.jpg" alt=""></a></figure>
+                                <div class="text webkit">
+                                    <div class="left-sec">
+                                        <h3><a href="#">Behind the Scens</a></h3>
+                                        <p>Nonumy eirmod tempor</p>
+                                    </div>
+                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure><a href="#"><img src="images/latest-album6.jpg" alt=""></a></figure>
+                                <div class="text webkit">
+                                    <div class="left-sec">
+                                        <h3><a href="#">Behind the Scens</a></h3>
+                                        <p>Nonumy eirmod tempor</p>
+                                    </div>
+                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure><a href="#"><img src="images/latest-album3.jpg" alt=""></a></figure>
+                                <div class="text webkit">
+                                    <div class="left-sec">
+                                        <h3><a href="#">Behind the Scens</a></h3>
+                                        <p>Nonumy eirmod tempor</p>
+                                    </div>
+                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure><a href="#"><img src="images/latest-album7.jpg" alt=""></a></figure>
+                                <div class="text webkit">
+                                    <div class="left-sec">
+                                        <h3><a href="#">Behind the Scens</a></h3>
+                                        <p>Nonumy eirmod tempor</p>
+                                    </div>
+                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <!-- Latest Album End -->
+                </div>
+                <!-- Span12 End -->
+            </div>
+            <!-- Row End -->
+        </div>
+        <!-- Parallex Start -->
+        <div class="parallex" data-speed="2" data-type="background">
+            <div class="top-sec">
+                <div class="heading"><h2><span class="color">Photo </span> Gallery</h2></div>
+                <ul id="portfolio-filter">
+                    <li><a href="#all" title="">All</a></li>
+                    <li><a href="#design" title="Business" data-rel="design">Business</a></li>
+                    <li><a href="#partner" title="Web Design" data-rel="partner">Web Design</a></li>
+                    <li><a href="#political" title="Photography" data-rel="political">Photography</a></li>
+                </ul>
+            </div>
+            <!-- Container Start -->
+            <div class="container">
+                <div class="boundingBox portfolio-filter kf-gallery-pp" id="content">
+                    <ul id="portfolio-list">
+                        <li class="business ecommerce partner cms programming jquery search">
+                            <div>
+                                <figure><img src="images/gal-1.jpg" alt="">
+                                    <figcaption><a data-rel="prettyphoto[]" href="images/gallery-img1.jpg" class="fa fa-plus"></a></figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li class="nonprofit partner cms jquery">
+                            <div>
+                                <figure><img src="images/gal-2.jpg" alt="">
+                                    <figcaption><a data-rel="prettyphoto[]" href="images/gallery-img2.jpg" class="fa fa-plus"></a></figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li class="business design">
+                            <div>
+                                <figure><img src="images/gal-3.jpg" alt="">
+                                    <figcaption><a data-rel="prettyphoto[]" href="images/gallery-img3.jpg" class="fa fa-plus"></a></figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li class="nonprofit university design cms jquery video">
+                            <div>
+                                <figure><img src="images/gal-4.jpg" alt="">
+                                    <figcaption><a data-rel="prettyphoto[]" href="images/gallery-img4.jpg" class="fa fa-plus"></a></figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li class="political design cms">
+                            <div>
+                                <figure><img src="images/gal-5.jpg" alt="">
+                                    <figcaption><a data-rel="prettyphoto[]" href="images/gallery-img5.jpg" class="fa fa-plus"></a></figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li class="university partner design cms jquery">
+                            <div>
+                                <figure><img src="images/gal-6.jpg" alt="">
+                                    <figcaption><a data-rel="prettyphoto[]" href="images/gallery-img6.jpg" class="fa fa-plus"></a></figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Parallex End -->
+        <!-- Parallex Start -->
+        <div class="twitter-parallex" data-speed="2" data-type="background">
+            <!-- Container Start -->
+            <div class="container">
+                <i class="fa fa-twitter fa-5x"></i>
+                <div class="heading"><h2>Merry Williams</h2></div>
+                <div class="flexslider">
+                  <ul class="slides">
+                    <li>
+                        <p>The <a href="#">#blackandwhiteamerica</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at purus vel sem isque gravida. lentesque vitae mi in purus commodo mollis eu at. neque.</p>
+                    </li>
+                    <li>
+                        <p>The <a href="#">#blackandwhiteamerica</a> Lorem ipsum dolor sit isque gravida. lentesque vitae mi in purus commodo mollis eu at. neque.</p>
+                    </li>
+                    <li>
+                        <p>The <a href="#">#blackandwhiteamerica</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at purus vel sem.</p>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Parallex End -->
+        <div class="clear"></div>
+    </div>
+    <!-- Content End -->
+    <!--- Footer Start -->
+    <footer>
+        <!-- Footer Widget Start -->
+        <div class="footer-widget">
+            <!-- Container Start -->
+            <div class="container">
+                <!-- Widget Text Start -->
+                <div class="widget widget-text">
+                    <div class="heading"><h3>About <span class="color"> Music Press</span></h3></div>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
+                </div>
+                <!-- Widget Text Start -->
+                <!-- Widget Twitter Start -->
+                <div class="widget widget-twitter">
+                    <div class="heading"><h3>Recent <span class="color"> Tweets</span></h3></div>
+                    <div class="peragraph webkit">The <a href="#">#blackandwhiteamerica</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at purus vel sem isque gravida. lentesque vitae mi in purus commodo mollis eu at. neque.</div>
+                    <p><a href="#" class="colorhover">Lenny Kravitz </a> (15 hours ago)</p>
+                </div>
+                <!-- Widget Twitter End -->
+                <!-- Widget Gallery Start -->
+                <div class="widget kf-gallery-pp widget-gallery">
+                    <div class="heading"><h3>Flickr <span class="color"> Gallery</span></h3></div>
+                    <ul>
+                                                <li><a data-rel="prettyphoto[]" href="images/blog1.jpg"><img src="images/widget1.jpg" alt=""></a></li>
+                        <li><a data-rel="prettyphoto[]" href="images/blog1.jpg"><img src="images/widget2.jpg" alt=""></a></li>
+                        <li><a data-rel="prettyphoto[]" href="images/blog1.jpg"><img src="images/widget3.jpg" alt=""></a></li>
+                        <li><a data-rel="prettyphoto[]" href="images/blog1.jpg"><img src="images/widget4.jpg" alt=""></a></li>
+                        <li><a data-rel="prettyphoto[]" href="images/blog1.jpg"><img src="images/widget5.jpg" alt=""></a></li>
+                        <li><a data-rel="prettyphoto[]" href="images/blog1.jpg"><img src="images/widget6.jpg" alt=""></a></li>
+                        <li><a data-rel="prettyphoto[]" href="images/blog1.jpg"><img src="images/widget7.jpg" alt=""></a></li>
+                        <li><a data-rel="prettyphoto[]" href="images/blog1.jpg"><img src="images/widget1.jpg" alt=""></a></li>
+                        <li><a data-rel="prettyphoto[]" href="images/blog1.jpg"><img src="images/widget3.jpg" alt=""></a></li>
+                        <li><a data-rel="prettyphoto[]" href="images/blog1.jpg"><img src="images/widget4.jpg" alt=""></a></li>
+                        <li><a data-rel="prettyphoto[]" href="images/blog1.jpg"><img src="images/widget5.jpg" alt=""></a></li>
+                        <li><a data-rel="prettyphoto[]" href="images/blog1.jpg"><img src="images/widget6.jpg" alt=""></a></li>
+                    </ul>
+                </div>
+                <!-- Widget Gallery End -->
+                <!-- Widget Twitter Start -->
+                <div class="widget widget-newslatter">
+                    <div class="heading"><h3>Signup for <span class="color"> Newsletters</span></h3></div>
+                    <p>By subscribing to our mailing list you will always be update with the latest news from us.Remember.. We never spam!</p>
+                    <form>
+                        <input type="text" value="Enter you full name">
+                        <input type="text" value="Enter your Email ID">
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <!-- Widget Twitter End -->
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Footer Widget End -->
+        <!-- CopyRight Start -->
+        <div class="copyright">
+            <div class="container">
+                <p>Powerd By: <a href="#" class="color">Kode Forest</a></p>
+                <span>© 2013 Music Press. All rights reserved</span>
+            </div>
+        </div>
+        <!-- CopyRight End -->
+    </footer>
+    <!--- Footer End -->
+    <div class="clear"></div>
+</div>
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h1 id="myModalLabel" class="uppercase">SIGN IN</h1>
+        <p>Enter your stuff to login to your account</p>
+    </div>
+    <div class="modal-body">
+        <p>
+            <label class="input-icon"><input type="text" value="Enter your username"></label>
+        </p>
+        <p>
+            <label class="input-icon-two">
+            <input type="password" value="password"></label>
+        </p>
+        <p>
+            <input type="checkbox">
+            <span>Remember me</span>
+            <input type="submit" value="sign in">
+        </p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="color">I forgot my password</a>
+        <a href="#" class="color">Create account</a>
+    </div>
+</div>
+<!-- Modal -->
+<div id="myModaltwo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabell" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h1 id="myModalLabell" class="uppercase">Search</h1>
+    </div>
+    <div class="modal-body">
+        <p>
+            <label class="input-icon"><input type="text" value="Enter your keyword"></label>
+        </p>
+        <p>
+            <input type="submit" value="Search">
+        </p>
+    </div>
+</div>
 {% endblock %}
