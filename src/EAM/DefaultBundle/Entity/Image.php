@@ -31,6 +31,18 @@ class Image
     private $url;
 
     /**
+     * @var integer
+     */
+    private $idAlbum;
+
+    /**
+     * @var Album
+     * 
+     * @ORM\ManyToOne(targetEntity="EAM\DefaultBundle\Entity\Album", inversedBy="images")
+     * @ORM\JoinColumn(name="idAlbum", referencedColumnName="id")
+     */
+    private $album;
+    /**
      * @var string
      *
      * @ORM\Column(name="alt", type="string", length=255)
@@ -123,4 +135,23 @@ class Image
         return $this->file;
     }
 
+    /**
+     * Get Album
+     *
+     * @return Album
+     */
+    public function getAlbum() {
+        return $this->album;
+    }
+    
+    /**
+     * Set Album
+     *
+     * @param Album $album
+     */
+    public function setAlbum($album) {
+        $this->album = $album;
+    
+        return $this;
+    }
 }

@@ -1,5 +1,7 @@
 <?php
 
+namespace EAM\DefaultBundle\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -28,16 +30,16 @@ class Album
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="EAM\DefaultBundle\Entity\Image")
-     * @ORM\JoinColumn(nullable=false)
-     * )
+     * @var Doctrine\Common\Collections\Collection
+     * 
+     * @ORM\OneToMany(targetEntity="EAM\DefaultBundle\Entity\Image", mappedBy="album")
      */
     private $images;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="integer", length=4)
+     * @ORM\Column(name="year", type="integer", length=4)
      */
     private $year;
 
@@ -68,5 +70,21 @@ class Album
     public function getImages()
     {
         return $this->images;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getYear() {
+        return $this->year;
+    }
+    
+    /**
+     * @param integer $year
+     */
+    public function setYear($year) {
+        $this->year = $year;
+    
+        return $this;
     }
 }
