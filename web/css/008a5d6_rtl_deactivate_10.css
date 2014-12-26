@@ -1,0 +1,164 @@
+body{
+	direction: rtl;
+}
+
+[class*="span"],
+.social-network h6,
+.top-nav,
+.logo,
+.top-nav p, .login-sec p, .login-sec .search,
+li,ul,
+.caption h1,
+.audio-control,
+.volume-wrap,
+.jp-current-time, .jp-duration,
+.jp-progress,
+.user-text a.user-icon,
+.top-text a,
+.bottom-text figure,
+.desc-head ul li span,
+.left-sec,
+.copyright p,
+.widget-category ul li a,
+.left-detail,
+.title-song,
+.widget-archive ul li a,
+.blog-listing .date,
+.nr-tagcloud i,
+.nr-tagcloud a,
+.nr-sahrepost h4,
+.nr-sahrepost a,
+.blog-detail-sec .about-authore figure,
+.about-authore .text a.tweet-follow,
+.about-authore figure,
+#comments ul li header h6,
+#comments ul li header span,
+#comments ul li figure,
+#rispond p input[type="submit"],
+.event-detail article figure figcaption .social-network a,
+.nr-featured-link,
+.post-options{
+	float: right;
+}
+
+.latest-album article .text .icon-plus,
+.login-sec,
+.social-network,
+.jp-playlist-icon,
+.copyright span,
+.pagination,
+.social-button,
+.jp-playpause,
+.blog-listing article .text p a{
+	float: left;
+}
+.social-network h6 {
+	margin: 3px 0 0 18px;
+}
+.top-nav p i, .login-sec p i{
+	margin: 0px 7px 0px 7px;
+}
+.search a{
+	margin: 0px 18px 0px 0px;
+}
+.caption{
+	left: auto;
+	right: 10%;
+}
+.caption p{
+	clear: right;
+}
+.main-progress{
+	margin: 0px 40px 0px 0px;
+}
+.jp-current-time, .jp-duration{
+	margin: 0px 10px 0px 0px;
+}
+.jp-progress{
+	margin: 5px 0% 0 1%;
+}
+.plyer-sec .jp-controls li{
+	margin: 0 0px 0 9px;
+}
+.featured-artist article figure .social-network{
+	left: auto;
+	right: -20px;
+}
+.featured-artist article:hover figure .social-network,
+.event-detail article figure figcaption{
+	left: auto;
+	right: 0px;
+}
+.user-text .sec{
+	padding: 21px 89px 12px 0px;
+}
+.bottom-text .sec{
+	padding: 22px 20px 9px 0px;
+}
+.widget-category ul li a{
+	border-left: none;
+	border-right: 3px solid #646464;
+	padding: 0 18px 0 0px;
+}
+.jp-social-option{
+	left: 47px;
+	right: auto;
+}
+.widget-archive ul li{
+	text-align: left;
+}
+.blog-listing .detail {
+    padding: 0 90px 0 0px;
+}
+.blog-listing .social-network{
+	right: -40px;
+	left: auto;
+}
+.blog-listing article:hover .social-network{
+	left: auto;
+	right: 0px;
+}
+blockquote{
+	border-left: none;
+	border-right: 5px solid;
+	padding: 30px 42px 30px 30px;
+}
+blockquote:before{
+	left: auto;
+	right: 10px;
+}
+.nr-tagcloud i {
+    margin: 10px 0px 0 10px;
+}
+.nr-sahrepost h4 {
+    margin: 8px 0px 0 15px;
+}
+.about-authore .text {
+    padding: 0 126px 0 0px;
+}
+.about-authore .text a.tweet-follow{
+	margin: 0px 0px 0px 6px;
+}
+#comments ul li figure{
+	margin: 0px 0px 0px 20px;
+}
+#comments ul li header h6{
+	margin: 0px 0px 0px 10px;
+}
+#comments ul ul {
+    padding: 0 110px 0 0px;
+}
+#comments ul ul li .thumblist:before{
+	left: auto;
+	right: 50px;
+}
+.marker-icon{
+	right: auto;
+	left: 0px;
+}
+.post-options li{
+	margin: 0px 0px 0px 20px;
+}
+.dj-listing .user-text .sec {
+    padding: 11px 12px 12px 0px;
+}
