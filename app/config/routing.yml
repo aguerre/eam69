@@ -1,4 +1,6 @@
 eam_default:
-    resource: "@EAMDefaultBundle/Controller/DefaultController.php"
+    resource: "@EAMDefaultBundle/Controller/"
     type: annotation
 
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

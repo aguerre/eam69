@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Album
  *
  * @ORM\Table("album")
- * @ORM\Entity(repositoryClass="RadioMetal\DefaultBundle\Entity\AlbumRepository")
+ * @ORM\Entity(repositoryClass="EAM\DefaultBundle\Entity\AlbumRepository")
  */
 class Album 
 {

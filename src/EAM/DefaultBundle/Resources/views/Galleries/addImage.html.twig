@@ -1,4 +1,7 @@
 {% extends 'EAMDefaultBundle::layout.html.twig' %}
 {% block body %}
-
+    {{ form_start(form) }}
+    {{ form_rest(form) }}
+    <input type="input">
+    {{ form_end(form) }}
 {% endblock %}

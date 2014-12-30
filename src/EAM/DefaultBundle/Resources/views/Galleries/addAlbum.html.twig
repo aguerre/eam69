@@ -1,4 +1,25 @@
 {% extends 'EAMDefaultBundle::layout.html.twig' %}
 {% block body %}
-
+<div class="wrapper">
+    <div class="content">
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Row Start -->
+            <div class="row">
+                <!-- Span12 Start -->
+                <div class="span12">
+                    {{ form_start(form) }}
+                    <div class="form-group">
+                        {{ form_row(form.name) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.year) }}
+                    </div>
+                    <input type="submit">
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

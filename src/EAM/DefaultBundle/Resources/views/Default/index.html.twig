@@ -10,7 +10,11 @@
                 <!-- Login Section Start -->
                 <div class="login-sec">
                     <div class="sign-in">
-                        <P><a href="{{ path('')}}" role="button" data-toggle="modal" class="colorhover"><i class="fa fa-sign-in"></i>SIGN IN</a> &nbsp;<a class="colorhover" href="#"><i class="fa fa-user"></i>CREATE ACCOUNT</a></P>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <a href="{{ path('fos_user_security_logout')}}" role="button" data-toggle="modal" class="colorhover"><i class="fa fa-sign-in"></i>DECONNEXION</a>
+                        {% else %}
+                            <p><a href="{{ path('fos_user_security_login')}}" role="button" data-toggle="modal" class="colorhover"><i class="fa fa-sign-in"></i>CONNEXION</a> &nbsp;<a class="colorhover" href="#"><i class="fa fa-user"></i>CREATE ACCOUNT</a></p>
+                        {% endif %}
                         <div class="search">
                             <a href="#myModaltwo" role="button" data-toggle="modal"><i class="fa fa-search"></i></a>
                         </div>
@@ -42,7 +46,10 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="album.html">Albums</a>
                         <ul>
-                            <li><a href="album-detail.html">Album Detail</a></li>
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <li><a href="{{ path('eam_default_galleries_albums')}}">Administration albums</a></li>
+                            {% endif %}
+                            <li><a href="">Album Detail</a></li>
                         </ul>
                     </li>
                     <li><a href="blog.html">Our Blog</a>

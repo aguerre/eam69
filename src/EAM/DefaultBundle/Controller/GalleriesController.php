@@ -3,17 +3,23 @@
 namespace EAM\DefaultBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use EAM\DefaultBundle\Entity\Image;
+use EAM\DefaultBundle\Entity\Album;
+use EAM\DefaultBundle\Form\Type\ImageType;
+use EAM\DefaultBundle\Form\Type\AlbumType;
 
 /**
- * @Route("/galleries")
+ * @Route("/admin/galleries")
  */
 class GalleriesController extends Controller
 {
     /**
      * @Route("/add-image")
-     * @requestMethod({"GET"})
+     * @Method({"GET"})
      * @Template
      */
     public function addImageAction()
@@ -28,7 +34,7 @@ class GalleriesController extends Controller
         ));
 
         return array(
-            'form' => $form
+            'form' => $form->createView()
         );
     }
 
@@ -58,14 +64,14 @@ class GalleriesController extends Controller
         }
 
         return array(
-            'form' => $form,
+            'form' => $form->createView(),
             'success' => $success
         );
     }
 
     /**
      * @Route("/add-album")
-     * @requestMethod({"GET"})
+     * @Method({"GET"})
      * @Template
      */
     public function addAlbumAction()
@@ -80,7 +86,7 @@ class GalleriesController extends Controller
         ));
 
         return array(
-            'form' => $form
+            'form' => $form->createView()
         );
     }
 
@@ -91,7 +97,8 @@ class GalleriesController extends Controller
      */
     public function doAlbumAction(Request $request)
     {
-        $form = $this->createForm(new AlbumType(), new Album(), array(
+        $album = new Album();
+        $form = $this->createForm(new AlbumType(), $album, array(
             'action' => $this->generateUrl('eam_default_galleries_doalbum'),
             'method' => 'POST',
             'attr' => array(
@@ -103,15 +110,45 @@ class GalleriesController extends Controller
         $form->handleRequest($request);
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($article);
+            $em->persist($album);
             $em->flush();
 
             $sccuess = true;
         }
 
         return array(
-            'form' => $form,
+            'form' => $form->createView(),
             'success' => $success
+        );
+    }
+
+    /**
+     * @Route("/albums")
+     * @Method({"GET"})
+     * @Template
+     */
+    public function albumsAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $albums = $em->getRepository('EAMDefaultBundle:Album')->findAll();
+        return array(
+            'albums' => $albums
+        );
+    }
+
+    /**
+     * @Route("/images")
+     * @Method({"GET"})
+     * @Template
+     */
+    public function imagesAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $images = $em->getRepository('EAMDefaultBundle:Image')->findAll();
+        return array(
+            'images' => $images
         );
     }
 }
