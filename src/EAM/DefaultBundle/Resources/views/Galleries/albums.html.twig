@@ -145,86 +145,19 @@
                     <div class="latest-album">
                         <div class="heading"><h2><a href="{{ path('eam_default_galleries_addalbum') }}"><span class="color">Créer </span> Album</a></h2></div>
                         <div class="minus-margin">
+                            {% for album in albums %}
                             <article>
                                 <figure><a href="#"><img src="images/latest-album1.jpg" alt=""></a></figure>
                                 <div class="text webkit">
                                     <div class="left-sec">
-                                        <h3><a href="#">Behind the Scenes</a></h3>
-                                        <p>Nonumy eirmod tempor</p>
+                                        <h3><a href="#">{{ album.name }}</a></h3>
+                                        <p>{{ album.date|date('d/m') }}</p>
+                                        <p>{{ album.year }}</p>
                                     </div>
                                     <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
                                 </div>
                             </article>
-                            <article>
-                                <figure><a href="#"><img src="images/latest-album2.jpg" alt=""></a></figure>
-                                <div class="text webkit">
-                                    <div class="left-sec">
-                                        <h3><a href="#">Lets Party</a></h3>
-                                        <p>Nonumy eirmod tempor</p>
-                                    </div>
-                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
-                                </div>
-                            </article>
-                            <article>
-                                <figure><a href="#"><img src="images/latest-album3.jpg" alt=""></a></figure>
-                                <div class="text webkit">
-                                    <div class="left-sec">
-                                        <h3><a href="#">Rock this night</a></h3>
-                                        <p>Nonumy eirmod tempor</p>
-                                    </div>
-                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
-                                </div>
-                            </article>
-                            <article>
-                                <figure><a href="#"><img src="images/latest-album4.jpg" alt=""></a></figure>
-                                <div class="text webkit">
-                                    <div class="left-sec">
-                                        <h3><a href="#">We are heading</a></h3>
-                                        <p>Nonumy eirmod tempor</p>
-                                    </div>
-                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
-                                </div>
-                            </article>
-                            <article>
-                                <figure><a href="#"><img src="images/latest-album5.jpg" alt=""></a></figure>
-                                <div class="text webkit">
-                                    <div class="left-sec">
-                                        <h3><a href="#">No one can stop</a></h3>
-                                        <p>Nonumy eirmod tempor</p>
-                                    </div>
-                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
-                                </div>
-                            </article>
-                            <article>
-                                <figure><a href="#"><img src="images/latest-album6.jpg" alt=""></a></figure>
-                                <div class="text webkit">
-                                    <div class="left-sec">
-                                        <h3><a href="#">Only one love</a></h3>
-                                        <p>Nonumy eirmod tempor</p>
-                                    </div>
-                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
-                                </div>
-                            </article>
-                            <article>
-                                <figure><a href="#"><img src="images/latest-album8.jpg" alt=""></a></figure>
-                                <div class="text webkit">
-                                    <div class="left-sec">
-                                        <h3><a href="#">This rocking</a></h3>
-                                        <p>Nonumy eirmod tempor</p>
-                                    </div>
-                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
-                                </div>
-                            </article>
-                            <article>
-                                <figure><a href="#"><img src="images/latest-album7.jpg" alt=""></a></figure>
-                                <div class="text webkit">
-                                    <div class="left-sec">
-                                        <h3><a href="#">Floor on fire</a></h3>
-                                        <p>Nonumy eirmod tempor</p>
-                                    </div>
-                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
-                                </div>
-                            </article>
+                            {% endfor %}
                         </div>
                     </div>
                     <!-- Latest Album End -->

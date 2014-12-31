@@ -30,6 +30,13 @@ class Album
     private $name;
 
     /**
+     * @var DateTime
+     * 
+     * @ORM\Column(name="date", type="datetime")
+     */
+    private $date;
+
+    /**
      * @var Doctrine\Common\Collections\Collection
      * 
      * @ORM\OneToMany(targetEntity="EAM\DefaultBundle\Entity\Image", mappedBy="album")
@@ -84,6 +91,22 @@ class Album
      */
     public function setYear($year) {
         $this->year = $year;
+    
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDate() {
+        return $this->date;
+    }
+    
+    /**
+     * @param \DateTime
+     */
+    public function setDate($date) {
+        $this->date = $date;
     
         return $this;
     }

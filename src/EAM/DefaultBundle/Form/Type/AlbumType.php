@@ -17,6 +17,7 @@ class AlbumType extends AbstractType
         $builder
             ->add('name', 'text')
             ->add('year', 'text')
+            ->add('date', 'date')
         ;
     }
     

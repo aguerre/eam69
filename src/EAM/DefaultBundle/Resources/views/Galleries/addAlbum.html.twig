@@ -6,6 +6,7 @@
         <div class="container">
             <!-- Row Start -->
             <div class="row">
+                <a href="{{ path('eam_default_galleries_albums') }}">Retour albums</a>
                 <!-- Span12 Start -->
                 <div class="span12">
                     {{ form_start(form) }}
@@ -14,6 +15,9 @@
                     </div>
                     <div class="form-group">
                         {{ form_row(form.year) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.date) }}
                     </div>
                     <input type="submit">
                     {{ form_end(form) }}
