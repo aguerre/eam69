@@ -150,11 +150,11 @@
                                 <figure><a href="#"><img src="images/latest-album1.jpg" alt=""></a></figure>
                                 <div class="text webkit">
                                     <div class="left-sec">
-                                        <h3><a href="#">{{ album.name }}</a></h3>
+                                        <h3><a href="{{ path('eam_default_galleries_editalbum', {'id': album.id }) }}">{{ album.name }}</a></h3>
                                         <p>{{ album.date|date('d/m') }}</p>
                                         <p>{{ album.year }}</p>
                                     </div>
-                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
+                                    <a class="icon-plus webkit" href="{{ path('eam_default_galleries_deletealbum', {'id': album.id }) }}">X</a>
                                 </div>
                             </article>
                             {% endfor %}

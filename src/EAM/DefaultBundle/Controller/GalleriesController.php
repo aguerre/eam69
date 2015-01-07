@@ -113,13 +113,104 @@ class GalleriesController extends Controller
             $em->persist($album);
             $em->flush();
 
-            $sccuess = true;
+            $success = true;
         }
 
         return array(
             'form' => $form->createView(),
             'success' => $success
         );
+    }
+
+    /**
+     * @Route("/edit-album-{id}", requirements={
+     *            "id"="\d+"
+     *        })
+     * @Method({"GET"})
+     * @Template("EAMDefaultBundle:Galleries:addAlbum.html.twig")
+     */
+    public function editAlbumAction(Request $request, $id)
+    {
+        $repository = $this->getDoctrine()->getManager()->getRepository('EAMDefaultBundle:Album');
+        $album = $repository->find($id);
+
+        if ($album === null) {
+            throw $this->createNotFoundException('Album[id='.$id.'] inexistant.');
+        }
+
+        $form = $this->createForm(new AlbumType(), $album, array(
+            'action' => $this->generateUrl('eam_default_galleries_doeditalbum', ['id' => $album->getId() ]),
+            'method' => 'POST',
+            'attr' => array(
+                'novalidate' => 'novalidate'
+            )
+        ));
+
+        return array(
+            'form' => $form->createView()
+        );
+
+    }
+
+    /**
+     * @Route("/edit-album-{id}", requirements={
+     *            "id"="\d+"
+     *        })
+     * @Method({"POST"})
+     * @Template("EAMDefaultBundle:Galleries:addAlbum.html.twig")
+     */
+    public function doEditAlbumAction(Request $request, $id)
+    {
+        $repository = $this->getDoctrine()->getManager()->getRepository('EAMDefaultBundle:Album');
+        $album = $repository->find($id);
+
+        if ($album === null) {
+            throw $this->createNotFoundException('Album[id='.$id.'] inexistant.');
+        }
+
+        $form = $this->createForm(new AlbumType(), $album, array(
+            'action' => $this->generateUrl('eam_default_galleries_doeditalbum', [ 'id' => $album->getId() ]),
+            'method' => 'POST',
+            'attr' => array(
+                'novalidate' => 'novalidate'
+            )
+        ));
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+        }
+
+        return array(
+            'form' => $form->createView()
+        );
+    }
+
+    /**
+     * @Route(path="/delete-{id}", requirements={
+     *      "id"="\d+"
+     * })
+     * @Template
+     * @Method({"GET"})
+     */
+    public function deleteAlbumAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('EAMDefaultBundle:Album');
+        $article = $repository->find($id);
+
+        if ($article === null) {
+            throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
+        }
+        $this->get('session')->getFlashBag()->add('info', 'Article bien supprimé');
+
+        // Ici, on gérera la suppression de l'article en question
+        $em->remove($article);
+        $em->flush();
+
+        return $this->redirect( $this->generateUrl('eam_default_galleries_albums') );
     }
 
     /**
