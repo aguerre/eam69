@@ -132,7 +132,12 @@
                             {% for album in albums %}
                             <article>
                                 {% set firstImage = album.images[0] %}
-                                <figure><a href="{{ path('eam_default_galleries_addimage') }}"><img src="{{ firstImage.url }}" alt="">Ajout d'une image</a></figure>
+                                <figure>
+                                    <img src="{{ firstImage.url }}" alt="">
+                                </figure>
+                                    <a href="{{ path('eam_default_galleries_addimage') }}">
+                                    Ajout d'une image
+                                    </a>
                                 <div class="text webkit">
                                     <div class="left-sec">
                                         <h3><a href="{{ path('eam_default_galleries_editalbum', {'id': album.id }) }}">{{ album.name }}</a></h3>
