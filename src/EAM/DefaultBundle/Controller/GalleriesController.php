@@ -11,6 +11,7 @@ use EAM\DefaultBundle\Entity\Image;
 use EAM\DefaultBundle\Entity\Album;
 use EAM\DefaultBundle\Form\Type\ImageType;
 use EAM\DefaultBundle\Form\Type\AlbumType;
+use EAM\DefaultBundle\Uploader\ImageUploader;
 
 /**
  * @Route("/admin/galleries")
@@ -45,7 +46,8 @@ class GalleriesController extends Controller
      */
     public function doImageAction(Request $request)
     {
-        $form = $this->createForm(new ImageType(), new Image(), array(
+        $image = new Image();
+        $form = $this->createForm(new ImageType(), $image, array(
             'action' => $this->generateUrl('eam_default_galleries_doimage'),
             'method' => 'POST',
             'attr' => array(
@@ -56,17 +58,53 @@ class GalleriesController extends Controller
         $success = false;
         $form->handleRequest($request);
         if ($form->isValid()) {
+            $name = $image->getFile()->getClientOriginalName();
+
+            $uploader = new ImageUploader($this->container);
+            $uploader->upload($image->getFile());
+
+            $image->setUrl($uploader->getUploadDir().'/'.$name)->setAlt($name);
+
             $em = $this->getDoctrine()->getManager();
-            $em->persist($article);
+            $em->persist($image);
             $em->flush();
 
-            $sccuess = true;
+            $success = true;
+        }
+
+        if ($success) {
+            return $this->redirect( $this->generateUrl('eam_default_galleries_albums') );
         }
 
         return array(
             'form' => $form->createView(),
             'success' => $success
         );
+    }
+
+    /**
+     * @Route(path="/delete-image-{id}", requirements={
+     *      "id"="\d+"
+     * })
+     * @Template
+     * @Method({"GET"})
+     */
+    public function deleteImageAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('EAMDefaultBundle:Album');
+        $article = $repository->find($id);
+
+        if ($article === null) {
+            throw $this->createNotFoundException('Image[id='.$id.'] inexistant.');
+        }
+        $this->get('session')->getFlashBag()->add('info', 'Image bien supprimée');
+
+        // Ici, on gérera la suppression de l'article en question
+        $em->remove($article);
+        $em->flush();
+
+        return $this->redirect( $this->generateUrl('eam_default_galleries_albums') );
     }
 
     /**
@@ -189,7 +227,7 @@ class GalleriesController extends Controller
     }
 
     /**
-     * @Route(path="/delete-{id}", requirements={
+     * @Route(path="/delete-album-{id}", requirements={
      *      "id"="\d+"
      * })
      * @Template

@@ -1,6 +1,6 @@
 <?php 
 
-namespace RadioMetal\DefaultBundle\Uploader;
+namespace EAM\DefaultBundle\Uploader;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 

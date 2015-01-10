@@ -1,7 +1,29 @@
 {% extends 'EAMDefaultBundle::layout.html.twig' %}
 {% block body %}
-    {{ form_start(form) }}
-    {{ form_rest(form) }}
-    <input type="input">
-    {{ form_end(form) }}
+<div class="wrapper">
+    <div class="content">
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Row Start -->
+            <div class="row">
+                <a href="{{ path('eam_default_galleries_albums') }}">Retour albums</a>
+                <!-- Span12 Start -->
+                <div class="span12">
+                    {{ form_start(form) }}
+                    <div class="form-group">
+                    {{ form_row(form.file) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.album) }}
+                    </div>
+                    <div class="form-group">
+                        <input type="submit">
+                    </div>
+                    {{ form_rest(form) }}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -98,22 +98,6 @@
                             <li><a href="gallery-four-col.html">Four Column</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Shortcodes</a>
-                        <ul>
-                            <li><a href="shortcode-accordian.html">Accordion</a></li>
-                            <li><a href="shortcode-alert.html">Alert</a></li>
-                            <li><a href="shortcode-column.html">Column</a></li>
-                            <li><a href="shortcode-dropcap.html">Dropcap</a></li>
-                            <li><a href="shortcode-fontfamily.html">Font Family</a></li>
-                            <li><a href="shortcode-highlighter.html">Highlighter</a></li>
-                            <li><a href="shortcode-icons.html">Icons</a></li>
-                            <li><a href="shortcode-list.html">List Style</a></li>
-                            <li><a href="shortcode-separator.html">Separator</a></li>
-                            <li><a href="shortcode-social.html">Social Icons</a></li>
-                            <li><a href="shortcode-table.html">Table</a></li><li><a href="shortcode-tabs.html">Tabs</a></li>
-                            <li><a href="shortcode-albums-teams.html">Albums & Teams</a></li>
-                        </ul>
-                    </li>
                     <li><a href="contact-us.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -147,7 +131,8 @@
                         <div class="minus-margin">
                             {% for album in albums %}
                             <article>
-                                <figure><a href="#"><img src="images/latest-album1.jpg" alt=""></a></figure>
+                                {% set firstImage = album.images[0] %}
+                                <figure><a href="{{ path('eam_default_galleries_addimage') }}"><img src="{{ firstImage.url }}" alt="">Ajout d'une image</a></figure>
                                 <div class="text webkit">
                                     <div class="left-sec">
                                         <h3><a href="{{ path('eam_default_galleries_editalbum', {'id': album.id }) }}">{{ album.name }}</a></h3>

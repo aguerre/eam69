@@ -16,6 +16,10 @@ class ImageType extends AbstractType
     {
         $builder
             ->add('file', 'file')
+            ->add('album',     'entity', array(
+                'class'         => 'EAMDefaultBundle:Album',
+                'property'      => 'name',
+                'multiple'      => false))
         ;
     }
     
