@@ -26,7 +26,13 @@ class GalleriesController extends Controller
     public function addImageAction(Request $request)
     {
         $idAlbum = $request->get('idAlbum');
-        $form = $this->createForm(new ImageType(), new Image(), array(
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('EAMDefaultBundle:Album');
+        $album = $repository->find($idAlbum);
+
+        $image = new Image();
+        $image->setAlbum($album);
+        $form = $this->createForm(new ImageType(), $image, array(
             'action' => $this->generateUrl('eam_default_galleries_doimage'),
             'method' => 'POST',
             'attr' => array(
@@ -47,7 +53,7 @@ class GalleriesController extends Controller
      */
     public function doImageAction(Request $request)
     {
-        $idAlbum = $request->get('idAlbum');
+        $idAlbum = $request->request->get('eam_defaultbundle_image')['album'];
         $image = new Image();
         $form = $this->createForm(new ImageType(), $image, array(
             'action' => $this->generateUrl('eam_default_galleries_doimage'),
@@ -92,8 +98,9 @@ class GalleriesController extends Controller
      * @Template
      * @Method({"GET"})
      */
-    public function deleteImageAction($id, $idAlbum)
+    public function deleteImageAction(Request $request, $id)
     {
+        $idAlbum = $request->get('idAlbum');
         $em = $this->getDoctrine()->getManager();
         $repository = $em->getRepository('EAMDefaultBundle:Image');
         $image = $repository->find($id);
@@ -156,6 +163,10 @@ class GalleriesController extends Controller
             $em->flush();
 
             $success = true;
+        }
+
+        if ($success) {
+            return $this->redirect($this->generateUrl('eam_default_galleries_albums'));
         }
 
         return array(

@@ -14,7 +14,8 @@
                     {{ form_row(form.file) }}
                     </div>
                     <div class="form-group">
-                        {{ form_row(form.album) }}
+                        {{ form_label(form.album) }}
+                        {{ form_widget(form.album) }}
                     </div>
                     <div class="form-group">
                         <input type="submit">
