@@ -1,0 +1,102 @@
+<!-- Header Start -->
+<header id="header">
+    <!-- Top Strip Start -->
+    <div class="top-strip">
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Login Section Start -->
+            <div class="top-nav">
+                <nav>
+                    <ul>
+                        <li><a href="dj.html">New Singles</a></li>
+                        <li><a href="artist.html">Newly Released Albums</a></li>
+                        <li><a href="news.html">Whats New</a></li>
+                        <li><a href="#">Party At Club</a></li>
+                        <li><a href="#">Join The Club</a></li>
+                        <li><a href="#">Membership</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Login Section End -->
+            <!-- Login Section Start -->
+            <div class="login-sec">
+                <div class="sign-in">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <a href="{{ path('fos_user_security_logout')}}" role="button" data-toggle="modal" class="colorhover"><i class="fa fa-sign-in"></i>DECONNEXION</a>
+                    {% else %}
+                        <p><a href="{{ path('fos_user_security_login')}}" role="button" data-toggle="modal" class="colorhover"><i class="fa fa-sign-in"></i>CONNEXION</a> &nbsp;<a class="colorhover" href="#"><i class="fa fa-user"></i>CREATE ACCOUNT</a></p>
+                    {% endif %}
+                    <div class="search">
+                        <a href="#myModaltwo" role="button" data-toggle="modal"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Login Section End -->
+        </div>
+        <!-- Container End -->
+    </div>
+    <!-- Top Strip End -->
+    <!-- Header Middle Section Start -->
+    <div class="head-middle-sec">
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Logo Start -->
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt=""></a>
+            </div>
+            <!-- Logo End -->
+            <!-- Social Icons -->
+            <div class="social-network">
+                <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Facebook"><i class="fa fa-facebook fa-1x"></i></a>
+                <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Linkedin"><i class="fa fa-linkedin fa-1x"></i></a>
+                <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Twitter"><i class="fa fa-twitter fa-1x"></i></a>
+                <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Youtube"><i class="fa fa-youtube fa-1x"></i></a>
+                <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Git"><i class="fa fa-git-square fa-1x"></i></a>
+                <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Pinterest"><i class="fa fa-pinterest fa-1x"></i></a>
+                <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Github"><i class="fa fa-github fa-1x"></i></a>
+                <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Instagram"><i class="fa fa-instagram fa-1x"></i></a>
+                <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Reddit"><i class="fa fa-reddit-square fa-1x"></i></a>
+            </div>
+        </div>
+        <!-- Container End -->
+    </div>
+    <!-- Header Middle Section End -->
+    <!-- Navigation Start -->
+    <div class="navigation">
+        <div class="container">
+            <a class="cs-click-menu webkit"><i class="fa fa-bars"></i></a>
+            <ul id="menus">
+                <li><a href="{{ path('eam_default_default_index') }}">Home</a></li>
+                <li><a href="album.html">Albums</a>
+                    <ul>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <li><a href="{{ path('eam_default_galleries_albums')}}">Administration albums</a></li>
+                        {% endif %}
+                        <li><a href="album-detail.html">Album Detail</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Our Blog</a>
+                    <ul>
+                        <li><a href="blog-full.html">Blog Full</a></li>
+                        <li><a href="blog-masnory.html">Blog Masnory</a></li>
+                        <li><a href="blog-detail.html">Blog Detail</a></li>
+                    </ul>
+                </li>
+                <li><a href="event.html">Music Event</a>
+                    <ul>
+                        <li><a href="event-detail.html">Event Detail</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Gallery</a>
+                    <ul>
+                        <li><a href="gallery-two-col.html">Two Column</a></li>
+                        <li><a href="gallery-three-col.html">Three Column</a></li>
+                        <li><a href="gallery-four-col.html">Four Column</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Navigation End -->
+</header>

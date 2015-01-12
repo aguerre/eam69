@@ -92,16 +92,16 @@ class GalleriesController extends Controller
     public function deleteImageAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $repository = $em->getRepository('EAMDefaultBundle:Album');
-        $article = $repository->find($id);
+        $repository = $em->getRepository('EAMDefaultBundle:Image');
+        $image = $repository->find($id);
 
-        if ($article === null) {
+        if ($image === null) {
             throw $this->createNotFoundException('Image[id='.$id.'] inexistant.');
         }
         $this->get('session')->getFlashBag()->add('info', 'Image bien supprimée');
 
-        // Ici, on gérera la suppression de l'article en question
-        $em->remove($article);
+        // Ici, on gérera la suppression de l'image en question
+        $em->remove($image);
         $em->flush();
 
         return $this->redirect( $this->generateUrl('eam_default_galleries_albums') );
@@ -237,15 +237,15 @@ class GalleriesController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $repository = $em->getRepository('EAMDefaultBundle:Album');
-        $article = $repository->find($id);
+        $album = $repository->find($id);
 
-        if ($article === null) {
-            throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
+        if ($album === null) {
+            throw $this->createNotFoundException('Album[id='.$id.'] inexistant.');
         }
-        $this->get('session')->getFlashBag()->add('info', 'Article bien supprimé');
+        $this->get('session')->getFlashBag()->add('info', 'album bien supprimé');
 
-        // Ici, on gérera la suppression de l'article en question
-        $em->remove($article);
+        // Ici, on gérera la suppression de l'album en question
+        $em->remove($album);
         $em->flush();
 
         return $this->redirect( $this->generateUrl('eam_default_galleries_albums') );
@@ -263,6 +263,26 @@ class GalleriesController extends Controller
         $albums = $em->getRepository('EAMDefaultBundle:Album')->findAll();
         return array(
             'albums' => $albums
+        );
+    }
+
+    /**
+     * @Route("/album-{id}", requirements={"id"="\d+"})
+     * @Method({"GET"})
+     * @Template
+     */
+    public function albumAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('EAMDefaultBundle:Album');
+        $album = $repository->find($id);
+
+        if ($album === null) {
+            throw $this->createNotFoundException('Album[id='.$id.'] inexistant.');
+        }
+
+        return array(
+            'album' => $album
         );
     }
 

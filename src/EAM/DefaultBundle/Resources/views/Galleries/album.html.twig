@@ -8,13 +8,12 @@
     <div class="breadcrumb webkit">
         <!-- Container Start -->
         <div class="container">
-            <h1 class="color">Liste d'albums</h1>
+            <h1 class="color">Gallery 4 Column</h1>
         </div>
         <!-- Container End -->
     </div>
     <!-- BreadCrumb End -->
-    <div class="clear">
-    </div>
+    <div class="clear"></div>
     <!-- Content Start -->
     <div class="content">
         <!-- Container Start -->
@@ -23,35 +22,21 @@
             <div class="row">
                 <!-- Span12 Start -->
                 <div class="span12">
-                    <!-- Latest Album Start -->
-                    <div class="latest-album">
-                        <div class="heading"><h2><a href="{{ path('eam_default_galleries_addalbum') }}"><span class="color">Créer </span> Album</a></h2></div>
-                        <div class="minus-margin">
-                            {% for album in albums %}
+                    <!-- Gallery Start -->
+                    <div class="gallery-page kf-gallery-pp">
+                        <div class="heading"><h2>{{ album.name }}</h2></div>
+                        <div class="minus-margin gallery-four-col">
+                            {% for image in album.images %}
                             <article>
-                                {% set firstImage = album.images[0] ? album.images[0] : null %}
                                 <figure>
-                                    {% if firstimage is not null %}
-                                    <img src="{{ firstImage.url }}" alt="">
-                                    {% endif %}
+                                    <a href="#"><img src="{{ image.url }}" alt=""></a>
+                                    <figcaption><a data-rel="prettyphoto[]" href="{{ path('eam_default_galleries_deleteimage', {'id' : image.id })}}" class="color webkit">x</a></figcaption>
                                 </figure>
-                                    <a href="{{ path('eam_default_galleries_addimage') }}">
-                                    Ajout d'une image
-                                    </a>
-                                <div class="text webkit">
-                                    <div class="left-sec">
-                                        <h3><a href="{{ path('eam_default_galleries_album', {'id': album.id }) }}">{{ album.name }}</a></h3>
-                                        <a href="{{ path('eam_default_galleries_editalbum', {'id': album.id }) }}">Modifier</a>
-                                        <p>{{ album.date|date('d/m') }}</p>
-                                        <p>{{ album.year }}</p>
-                                    </div>
-                                    <a class="icon-plus webkit" href="{{ path('eam_default_galleries_deletealbum', {'id': album.id }) }}">X</a>
-                                </div>
                             </article>
                             {% endfor %}
                         </div>
                     </div>
-                    <!-- Latest Album End -->
+                    <!-- Gallery End -->
                     <!-- Pagination Start -->
                     <nav class="pagination">
                         <ul>

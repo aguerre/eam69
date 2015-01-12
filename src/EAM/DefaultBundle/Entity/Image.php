@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Image
  *
  * @ORM\Table("image")
- * @ORM\Entity(repositoryClass="RadioMetal\DefaultBundle\Entity\ImageRepository")
+ * @ORM\Entity(repositoryClass="EAM\DefaultBundle\Entity\ImageRepository")
  * 
  */
 class Image
