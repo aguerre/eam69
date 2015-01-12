@@ -8,7 +8,7 @@
     <div class="breadcrumb webkit">
         <!-- Container Start -->
         <div class="container">
-            <h1 class="color">Gallery 4 Column</h1>
+            <h1 class="color">{{ album.name }}</h1>
         </div>
         <!-- Container End -->
     </div>
@@ -24,7 +24,7 @@
                 <div class="span12">
                     <!-- Gallery Start -->
                     <div class="gallery-page kf-gallery-pp">
-                        <div class="heading"><h2>{{ album.name }}</h2></div>
+                        <div class="heading"><h2><a href="{{ path('eam_default_galleries_addimage') }}">Ajouter une image</a></h2></div>
                         <div class="minus-margin gallery-four-col">
                             {% for image in album.images %}
                             <article>

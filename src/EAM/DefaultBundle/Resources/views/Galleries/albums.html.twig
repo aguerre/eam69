@@ -29,9 +29,9 @@
                         <div class="minus-margin">
                             {% for album in albums %}
                             <article>
-                                {% set firstImage = album.images[0] ? album.images[0] : null %}
+                                {% set firstImage = album.images|first %}
                                 <figure>
-                                    {% if firstimage is not null %}
+                                    {% if firstImage is not empty %}
                                     <img src="{{ firstImage.url }}" alt="">
                                     {% endif %}
                                 </figure>
