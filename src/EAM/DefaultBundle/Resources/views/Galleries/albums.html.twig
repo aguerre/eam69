@@ -35,7 +35,7 @@
                                     <img src="{{ firstImage.url }}" alt="">
                                     {% endif %}
                                 </figure>
-                                    <a href="{{ path('eam_default_galleries_addimage') }}">
+                                    <a href="{{ path('eam_default_galleries_addimage', { 'idAlbum': album.id }) }}">
                                     Ajout d'une image
                                     </a>
                                 <div class="text webkit">
