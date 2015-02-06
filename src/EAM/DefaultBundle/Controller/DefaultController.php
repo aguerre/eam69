@@ -16,4 +16,13 @@ class DefaultController extends Controller
     {
         return array();
     }
+
+    /**
+     * @Route("/contact")
+     * @Template()
+     */
+    public function contactAction()
+    {
+    	return array();
+    }
 }
