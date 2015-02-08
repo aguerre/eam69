@@ -8,7 +8,7 @@
     <div class="breadcrumb webkit">
         <!-- Container Start -->
         <div class="container">
-            <h1 class="color">Liste d'albums</h1>
+            <h1 class="color">Albums photos</h1>
         </div>
         <!-- Container End -->
     </div>
@@ -25,27 +25,21 @@
                 <div class="span12">
                     <!-- Latest Album Start -->
                     <div class="latest-album">
-                        <div class="heading"><h2><a href="{{ path('eam_default_galleries_addalbum') }}"><span class="color">Créer </span> Album</a></h2></div>
+                        <div class="heading"><h2><span class="color">Toutes </span> Saisons</h2></div>
                         <div class="minus-margin">
                             {% for album in albums %}
                             <article>
                                 {% set firstImage = album.images|first %}
                                 <figure>
                                     {% if firstImage is not empty %}
-                                    <img src="{{ firstImage.url }}" alt="">
+                                    <a href="{{ path('eam_default_default_album', {'id': album.id }) }}"><img src="{{ firstImage.url }}" alt=""></a>
                                     {% endif %}
                                 </figure>
-                                    <a href="{{ path('eam_default_galleries_addimage', { 'idAlbum': album.id }) }}">
-                                    Ajout d'une image
-                                    </a>
                                 <div class="text webkit">
                                     <div class="left-sec">
-                                        <h3><a href="{{ path('eam_default_galleries_album', {'id': album.id }) }}">{{ album.name }}</a></h3>
-                                        <a href="{{ path('eam_default_galleries_editalbum', {'id': album.id }) }}">Modifier</a>
-                                        <p>{{ album.date|date('d/m') }}</p>
-                                        <p>{{ album.year }}</p>
+                                        <h3><a href="{{ path('eam_default_default_album', {'id': album.id }) }}">{{ album.name }}</a></h3>
+                                        <p>{{ album.date|date('d/m') }}/{{ album.year }}</p>
                                     </div>
-                                    <a class="icon-plus webkit" href="{{ path('eam_default_galleries_deletealbum', {'id': album.id }) }}">X</a>
                                 </div>
                             </article>
                             {% endfor %}
@@ -53,16 +47,16 @@
                     </div>
                     <!-- Latest Album End -->
                     <!-- Pagination Start -->
-                    <nav class="pagination">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                        </ul>
-                    </nav>
+<!--                     <nav class="pagination">
+    <ul>
+        <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+    </ul>
+</nav> -->
                     <!-- Pagination End -->
                 </div>
                 <!-- Span12 End -->

@@ -53,21 +53,14 @@
                 <li><a href="#">Albums</a>
                     <ul>
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        <li><a href="{{ path('eam_default_galleries_albums')}}">Administration albums</a></li>
+                        <li><a href="{{ path('eam_default_galleries_albums') }}">Administration albums</a></li>
                         {% endif %}
-                        <li><a href="album-detail.html">Liste des albums</a></li>
+                        <li><a href="{{ path('eam_default_default_albums') }}">Liste des albums</a></li>
                     </ul>
                 </li>
                 <li><a href="event.html">Événements</a>
                     <ul>
                         <li><a href="event-detail.html">Event Detail</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Gallery</a>
-                    <ul>
-                        <li><a href="gallery-two-col.html">Two Column</a></li>
-                        <li><a href="gallery-three-col.html">Three Column</a></li>
-                        <li><a href="gallery-four-col.html">Four Column</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ path('eam_default_default_contact') }}">Contact</a></li>

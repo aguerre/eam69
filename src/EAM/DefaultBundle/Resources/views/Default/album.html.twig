@@ -4,16 +4,6 @@
 <div class="wrapper">
     {% include 'EAMDefaultBundle::header.html.twig' %}
     <div class="clear"></div>
-    <!-- BreadCrumb Start -->
-    <div class="breadcrumb webkit">
-        <!-- Container Start -->
-        <div class="container">
-            <h1 class="color">{{ album.name }}</h1>
-        </div>
-        <!-- Container End -->
-    </div>
-    <!-- BreadCrumb End -->
-    <div class="clear"></div>
     <!-- Content Start -->
     <div class="content">
         <!-- Container Start -->
@@ -24,15 +14,13 @@
                 <div class="span12">
                     <!-- Gallery Start -->
                     <div class="gallery-page kf-gallery-pp">
-                        <div class="heading"><h2><a href="{{ path('eam_default_galleries_addimage', {'idAlbum': album.id}) }}">Ajouter une image</a></h2></div>
+                        <div class="heading"><h2>{{ album.name }}</h2></div>
                         <div class="minus-margin gallery-four-col">
                             {% for image in album.images %}
                             <article>
                                 <figure>
                                     <a href="#"><img src="{{ image.url }}" alt=""></a>
-                                    <figcaption><a data-rel="prettyphoto[]" href="{{ path('eam_default_galleries_deleteimage', {'id' : image.id, 'idAlbum': album.id}) }}" class="color webkit">x</a></figcaption>
                                 </figure>
-                                <p>{{ image.url }}</p>
                             </article>
                             {% endfor %}
                         </div>

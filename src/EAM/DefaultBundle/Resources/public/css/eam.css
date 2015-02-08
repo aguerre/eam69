@@ -1,0 +1,9 @@
+ul.slides {
+	margin-bottom: 0;
+	float: none;
+}
+ul.slides li img {
+	display: block;
+	width: 1370px;
+	margin: 0 auto;
+}

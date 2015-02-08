@@ -1,176 +1,56 @@
 {% extends 'EAMDefaultBundle::layout.html.twig' %}
 {% block body %}
 <div class="wrapper">
-	<!-- Header Start -->
-	<header id="header">
-        <!-- Top Strip Start -->
-        <div class="top-strip">
-            <!-- Container Start -->
-            <div class="container">
-                <!-- Login Section Start -->
-                <div class="top-nav">
-                    <nav>
-                        <ul>
-                            <li><a href="dj.html">New Singles</a></li>
-                            <li><a href="artist.html">Newly Released Albums</a></li>
-							<li><a href="news.html">Whats New</a></li>
-							<li><a href="#">Party At Club</a></li>
-                            <li><a href="#">Join The Club</a></li>
-							<li><a href="#">Membership</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- Login Section End -->
-                <!-- Login Section Start -->
-                <div class="login-sec">
-                    <div class="sign-in">
-                        <P><a href="#myModal" role="button" data-toggle="modal" class="colorhover"><i class="fa fa-sign-in"></i>SIGN IN</a> &nbsp;<a class="colorhover" href="#"><i class="fa fa-user"></i>CREATE ACCOUNT</a></P>
-                        <div class="search">
-                            <a href="#myModaltwo" role="button" data-toggle="modal"><i class="fa fa-search"></i></a>
-                            
-                        </div>
-                    </div>
-                </div>
-                <!-- Login Section End -->
-            </div>
-            <!-- Container End -->
-        </div>
-        <!-- Top Strip End -->
-        <!-- Header Middle Section Start -->
-        <div class="head-middle-sec">
-            <!-- Container Start -->
-            <div class="container">
-                <!-- Logo Start -->
-                <div class="logo">
-                    <a href="index.html"><img src="images/logo.png" alt=""></a>
-                </div>
-                <!-- Logo End -->
-				<!-- Social Icons -->
-				<div class="social-network">
-                    <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Facebook"><i class="fa fa-facebook fa-1x"></i></a>
-                    <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Linkedin"><i class="fa fa-linkedin fa-1x"></i></a>
-                    <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Twitter"><i class="fa fa-twitter fa-1x"></i></a>
-                    <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Youtube"><i class="fa fa-youtube fa-1x"></i></a>
-                    <a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Git"><i class="fa fa-git-square fa-1x"></i></a>
-					<a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Pinterest"><i class="fa fa-pinterest fa-1x"></i></a>
-					<a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Github"><i class="fa fa-github fa-1x"></i></a>
-					<a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Instagram"><i class="fa fa-instagram fa-1x"></i></a>
-					<a href="#" data-rel="tooltip" data-placement="top" title="" data-original-title="Reddit"><i class="fa fa-reddit-square fa-1x"></i></a>
-                </div>
-            </div>
-            <!-- Container End -->
-        </div>
-        <!-- Header Middle Section End -->
-        <!-- Navigation Start -->
-        <div class="navigation">
-            <div class="container">
-                <a class="cs-click-menu webkit"><i class="fa fa-bars"></i></a>
-                <ul id="menus">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="album.html">Albums</a>
-                        <ul>
-                            <li><a href="album-detail.html">Album Detail</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="blog.html">Our Blog</a>
-                        <ul>
-                            <li><a href="blog-full.html">Blog Full</a></li>
-                            <li><a href="blog-masnory.html">Blog Masnory</a></li>
-                            <li><a href="blog-detail.html">Blog Detail</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="event.html">Music Event</a>
-                        <ul>
-                            <li><a href="event-detail.html">Event Detail</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Gallery</a>
-                        <ul>
-                            <li><a href="gallery-two-col.html">Two Column</a></li>
-                            <li><a href="gallery-three-col.html">Three Column</a></li>
-                            <li><a href="gallery-four-col.html">Four Column</a></li>
-                        </ul>
-                    </li>
-					<li><a href="#">Shortcodes</a>
-						<ul>
-							<li><a href="shortcode-accordian.html">Accordion</a></li>
-							<li><a href="shortcode-alert.html">Alert</a></li>
-							<li><a href="shortcode-column.html">Column</a></li>
-							<li><a href="shortcode-dropcap.html">Dropcap</a></li>
-							<li><a href="shortcode-fontfamily.html">Font Family</a></li>
-							<li><a href="shortcode-highlighter.html">Highlighter</a></li>
-							<li><a href="shortcode-icons.html">Icons</a></li>
-							<li><a href="shortcode-list.html">List Style</a></li>
-							<li><a href="shortcode-separator.html">Separator</a></li>
-							<li><a href="shortcode-social.html">Social Icons</a></li>
-							<li><a href="shortcode-table.html">Table</a></li><li><a href="shortcode-tabs.html">Tabs</a></li>
-							<li><a href="shortcode-albums-teams.html">Albums & Teams</a></li>
-						</ul>
-					</li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- Navigation End -->
-    </header>
-    <!--- Header End -->
+    {% include 'EAMDefaultBundle::header.html.twig' %}
     <div class="clear"></div>
     <!-- BreadCrumb Start -->
     <div class="breadcrumb webkit">
         <!-- Container Start -->
         <div class="container">
-            <h1 class="color">Contact Us</h1>
+            <h1 class="color">Contactez Nous</h1>
         </div>
         <!-- Container End -->
     </div>
     <!-- BreadCrumb End -->
     <div class="clear"></div>
-	<!-- Content Start -->
-	<div class="content">
+    <!-- Content Start -->
+    <div class="content">
         <!-- Container Start -->
         <div class="container">
             <!-- Row Start -->
             <div class="row">
-                <!-- Span12 Start -->
-                <div class="span12">
-                    <!-- Map Secion Start -->
-                    <div class="map-sec">
-                        <div class="map-canvas" id="map-canvas"></div>
-                    </div>
-                    <!-- Map Secion End -->
-                </div>
-                <!-- Span12 End -->
                 <!-- Span6 Start -->
                 <div class="span6">
                     <!-- Comments Form Start -->
                     <div id="rispond">
-                        <div class="heading"><h2><span class="color">Feedback </span> Form</h2></div>
-                        <form method="post" class="comments-form" id="contactform">
-                            <p class="name">
-                                <label>Name <span class="color">(required)</span></label>
-                                <input type="text" id="name" name="name" class="required" value="">
-                            </p>
-                            <p class="email">
-                                <label>Email <span class="color">(required)</span></label>
-                                <input type="text" id="email" name="email" class="required email" value="">
-                            </p>
-                            <p>
-                                <label>Website </label>
-                                <input type="text" name="website" class="required url" value="">
-                            </p>
-                            <p>
-                                <label>Comments </label>
-                                <textarea name="message" id="message"></textarea>
-                            </p>
-							<p class="input-block">
-								<label for="verify">Are you human?</label>
-								<iframe src="inc/capcha_page.php" height="29" width="80" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" class="capcha_image_frame" name="capcha_image_frame"></iframe>
-								<input class="verify" type="text" id="verify" name="verify" />
-							</p>
-                            <p>
-                                <input type="submit" value="submit" class="bgcolor">
-                            </p>
-                        </form>
+                        {{ form_start(form, {'attr' : { 'class' : 'comments-form'}}) }}
+                        <div class="heading"><h2><span class="color">Votre </span> message</h2></div>
+                        <p class="name">
+                            {{ form_label(form.nom) }}
+                            {{ form_widget(form.nom) }}
+                        </p>
+                        <p class="email">
+                            {{ form_label(form.email) }}
+                            {{ form_widget(form.email) }}
+                        </p>
+                        <p>
+                            {{ form_label(form.sujet) }}
+                            {{ form_widget(form.sujet) }}
+                        </p>
+                        <p>
+                            {{ form_label(form.message) }}
+                            {{ form_widget(form.message) }}
+                        </p>
+                        <p class="input-block">
+                            <label for="verify">Etes vous humain ?</label>
+                            <iframe src="inc/capcha_page.php" height="29" width="80" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" class="capcha_image_frame" name="capcha_image_frame"></iframe>
+                            <input class="verify" type="text" id="verify" name="verify" />
+                        </p>
+                        <p>
+                            <input type="submit" value="Envoyer" class="bgcolor">
+                        </p>
+                        {{ form_rest(form) }}
+                        {{ form_end(form) }}
                     </div>
                     <!-- Comments Form End -->
                 </div>
@@ -179,21 +59,13 @@
                 <div class="span6">
                     <!-- Text Widget Start -->
                     <div class="widget widget-text">
-                        <div class="heading"><h2><span class="color">Contact </span> Information</h2></div>
+                        <div class="heading"><h2><span class="color">Information </span> Contact</h2></div>
                         <p>Lorem ipsum dolor amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer neque lementum posuere purus. Nam convallis ipsum. Maecenas a vulputate ipsum. Sed nec consequat felis sit amet sollicitudin neque.</p>
                         <ul>
                             <li>Address: 12 Street, Los Angeles, CA, 94101</li>
                             <li>Phone: +1 800 123 4567</li>
                             <li>Email:<a href="#" class="colorhover">testmail@sitename.com</a></li>
                         </ul>
-                        <!-- SharePost Start -->
-                        <div class="nr-sahrepost">
-                            <a href="#" class="bghover"><i class="fa fa-facebook fa-2x"></i></a>
-                            <a href="#" class="bghover"><i class="fa fa-twitter fa-2x"></i></a>
-                            <a href="#" class="bghover"><i class="fa fa-youtube fa-2x"></i></a>
-                            <a href="#" class="bghover"><i class="fa fa-pinterest fa-2x"></i></a>
-                        </div>
-                        <!-- SharePost End -->
                     </div>
                     <!-- Text Widget End -->
                 </div>
@@ -203,7 +75,7 @@
         </div>
         <!-- Container End -->
     </div>
-	<!-- Content End -->
+    <!-- Content End -->
     {% include 'EAMDefaultBundle::footer.html.twig' %}
 </div>
 <!--- Wrapper End -->
