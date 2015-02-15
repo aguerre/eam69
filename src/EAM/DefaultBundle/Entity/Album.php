@@ -30,6 +30,13 @@ class Album
     private $name;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="categorie", type="string", length=255)
+     */
+    private $categories;
+
+    /**
      * @var DateTime
      * 
      * @ORM\Column(name="date", type="datetime")
@@ -65,6 +72,18 @@ class Album
     public function getName()
     {
         return $this->name;
+    }
+
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie($categorie)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
     }
 
     public function addImage($image)
