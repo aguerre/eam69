@@ -34,7 +34,7 @@ class Album
      *
      * @ORM\Column(name="categorie", type="string", length=255)
      */
-    private $categories;
+    private $categorie;
 
     /**
      * @var DateTime
