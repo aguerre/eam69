@@ -32,7 +32,7 @@ class Partenaire
 	/**
 	 * @var string
 	 *
-	 * @ORM\Column(name="image", type="string")
+	 * @ORM\Column(name="image_url", type="string")
 	 */
 	private $image;
 

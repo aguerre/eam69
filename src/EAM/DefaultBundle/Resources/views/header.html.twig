@@ -63,6 +63,9 @@
                         <li><a href="event-detail.html">Event Detail</a></li>
                     </ul>
                 </li>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li><a href="{{ path('eam_default_partenaires_all') }}">Partenaires</a></li>
+                {% endif %}
                 <li><a href="{{ path('eam_default_default_contact') }}">Contact</a></li>
             </ul>
         </div>
