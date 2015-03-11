@@ -36,6 +36,13 @@ class Partenaire
 	 */
 	private $image;
 
+	/**
+	 * @var string
+	 *
+	 * @ORM\Column(name="site", type="string")
+	 */
+	private $lien;
+
 	public function getId()
 	{
 		return $this->id;
@@ -61,6 +68,18 @@ class Partenaire
 	public function setImage($image)
 	{
 		$this->image = $image;
+
+		return $this;
+	}
+
+	public function getLien()
+	{
+		return $this->lien;
+	}
+
+	public function setLien($lien)
+	{
+		$this->lien = $lien;
 
 		return $this;
 	}

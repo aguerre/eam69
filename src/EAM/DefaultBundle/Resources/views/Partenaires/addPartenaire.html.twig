@@ -11,14 +11,19 @@
                 <!-- Span12 Start -->
                 <div class="span12">
                     {{ form_start(form) }}
-                    <div class="form-group">
-                    {{ form_row(form.image) }}
+                    <div class="control-group">
+                        {{ form_label(form.image) }}
+                        {{ form_widget(form.image) }}
                     </div>
-                    <div class="form-group">
+                    <div class="control-group">
                         {{ form_label(form.nom) }}
                         {{ form_widget(form.nom) }}
                     </div>
-                    <div class="form-group">
+                    <div class="control-group">
+                        {{ form_label(form.lien) }}
+                        {{ form_widget(form.lien) }}
+                    </div>
+                    <div class="control-group">
                         <input type="submit">
                     </div>
                     {{ form_rest(form) }}
