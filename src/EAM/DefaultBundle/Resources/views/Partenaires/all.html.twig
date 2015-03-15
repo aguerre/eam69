@@ -35,7 +35,7 @@
                                 <div class="text webkit">
                                     <div class="left-sec">
                                         <h3><a href="{{ path('eam_default_partenaires_all', {'id': partenaire.id }) }}">{{ partenaire.nom }}</a></h3>
-                                        {% if is defined partenaire.lien %}
+                                        {% if partenaire.lien is defined %}
                                         <a href="{{ partenaire.lien }}">Site web</a>
                                         {% endif %}
                                     </div>
