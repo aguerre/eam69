@@ -27,22 +27,32 @@
                     <div class="latest-album">
                         <div class="heading"><h2><a href="{{ path('eam_default_partenaires_addpartenaire') }}"><span class="color">Créer Partenaire</span></a></h2></div>
                         <div class="minus-margin">
-                            {% for partenaire in partenaires %}
-                            <article>
-                                <figure>
-                                    <img src="{{ partenaire.image }}" alt="">
-                                </figure>
-                                <div class="text webkit">
-                                    <div class="left-sec">
-                                        <h3><a href="{{ path('eam_default_partenaires_all', {'id': partenaire.id }) }}">{{ partenaire.nom }}</a></h3>
-                                        {% if partenaire.lien is not empty %}
-                                        <a href="{{ partenaire.lien }}">Site web</a>
-                                        {% endif %}
-                                    </div>
-                                    <a class="icon-plus webkit" href="{{ path('eam_default_partenaires_deletepartenaire', {'id': partenaire.id }) }}">X</a>
+                            <div class="row">
+                                <div class="span12">
+                                {% for partenaire in partenaires %}
+                                    <article>
+                                        <figure>
+                                            <img src="{{ partenaire.image }}" alt="">
+                                        </figure>
+                                        <div class="text webkit">
+                                            <div class="left-sec">
+                                                <h3><a href="{{ path('eam_default_partenaires_all', {'id': partenaire.id }) }}">{{ partenaire.nom }}</a></h3>
+                                                {% if partenaire.lien is not empty %}
+                                                <a href="{{ partenaire.lien }}">Site web</a>
+                                                {% endif %}
+                                            </div>
+                                            <a class="icon-plus webkit" href="{{ path('eam_default_partenaires_deletepartenaire', {'id': partenaire.id }) }}">X</a>
+                                        </div>
+                                    </article>
+                                    {% if loop.index is divisible by(3) %}
                                 </div>
-                            </article>
-                            {% endfor %}
+                            </div>
+                            <div class="row">
+                                <div class="span12">
+                                    {% endif %}
+                                {% endfor %}
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- Latest Album End -->

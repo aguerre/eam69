@@ -27,22 +27,32 @@
                     <div class="latest-album">
                         <div class="heading"><h2><span class="color">Toutes </span> Saisons</h2></div>
                         <div class="minus-margin">
-                            {% for album in albums %}
-                            <article>
-                                {% set firstImage = album.images|first %}
-                                <figure>
-                                    {% if firstImage is not empty %}
-                                    <a href="{{ path('eam_default_default_album', {'id': album.id }) }}"><img src="{{ firstImage.url }}" alt=""></a>
-                                    {% endif %}
-                                </figure>
-                                <div class="text webkit">
-                                    <div class="left-sec">
-                                        <h3><a href="{{ path('eam_default_default_album', {'id': album.id }) }}">{{ album.name }}</a></h3>
-                                        <p>{{ album.date|date('d/m') }}/{{ album.year }}</p>
-                                    </div>
+                            <div class="row">
+                                <div class="span12">
+                                {% for album in albums %}
+                                    <article>
+                                        {% set firstImage = album.images|first %}
+                                        <figure>
+                                            {% if firstImage is not empty %}
+                                            <a href="{{ path('eam_default_default_album', {'id': album.id }) }}"><img src="{{ firstImage.url }}" alt=""></a>
+                                            {% endif %}
+                                        </figure>
+                                        <div class="text webkit">
+                                            <div class="left-sec">
+                                                <h3><a href="{{ path('eam_default_default_album', {'id': album.id }) }}">{{ album.name }}</a></h3>
+                                                <p>{{ album.date|date('d/m') }}/{{ album.year }}</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    {% if loop.index is divisible by(3) %}
                                 </div>
-                            </article>
-                            {% endfor %}
+                            </div>
+                            <div class="row">
+                                <div class="span12">
+                                    {% endif %}
+                                {% endfor %}
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- Latest Album End -->
