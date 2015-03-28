@@ -19,7 +19,6 @@ class ArticleType extends AbstractType
         $builder
             ->add('date',           'date')
             ->add('titre',          'text')
-            ->add('auteur',         'text')
             ->add('image',          new ImageType(), array('required' => false))
             ->add('contenu',        'textarea')
         ;

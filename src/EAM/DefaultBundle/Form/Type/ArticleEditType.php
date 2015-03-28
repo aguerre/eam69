@@ -14,7 +14,6 @@ class ArticleEditType extends AbstractType
             ->add('id', 'hidden')
             ->add('titre',          'text')
             ->add('dateModif',          'date')
-            ->add('auteur',         'text')
             ->add('publication',    'checkbox')
             ->add('image',          new ImageType(), array('required' => false))
             ->add('contenu',        'textarea')

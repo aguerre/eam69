@@ -30,7 +30,7 @@ class ArticlesController extends Controller
         $article = new Article();
         $article->setAuteur($username);
         
-        $form = $this->createForm(new ArticleType, $article, ['action' => $this->generateUrl('radiometal_default_articles_doajouter'), 'method' => 'POST']);
+        $form = $this->createForm(new ArticleType, $article, ['action' => $this->generateUrl('eam_default_articles_doajouter'), 'method' => 'POST']);
 
         return array(
             'form'   => $form->createView()
@@ -39,7 +39,7 @@ class ArticlesController extends Controller
 
     /**
      * @Route(path="/ajouter")
-     * @Template("RadioMetalDefaultBundle:Articles:ajouter.html.twig")
+     * @Template("EAMDefaultBundle:Articles:ajouter.html.twig")
      * @Method({"POST"})
      */
     public function doAjouterAction(Request $request)
@@ -81,13 +81,13 @@ class ArticlesController extends Controller
      *            "id"="\d+"
      *        }
      * )
-     * @Template("RadioMetalDefaultBundle:Articles:modifier.html.twig")
+     * @Template("EAMDefaultBundle:Articles:modifier.html.twig")
      * @Method({"GET"})
      */
     public function modifierAction(Request $request, $id)
     {
 
-        $repository = $this->getDoctrine()->getManager()->getRepository('RadioMetalDefaultBundle:Article');
+        $repository = $this->getDoctrine()->getManager()->getRepository('EAMDefaultBundle:Article');
         $article = $repository->find($id);
 
         if ($article === null) {
@@ -118,14 +118,14 @@ class ArticlesController extends Controller
      *            "id"="\d+"
      *        }
      * )
-     * @Template("RadioMetalDefaultBundle:Articles:modifier.html.twig")
+     * @Template("EAMDefaultBundle:Articles:modifier.html.twig")
      * @Method({"POST"})
      */
     public function doModifierAction(Request $request)
     {
 
         $id = $request->get('id');
-        $repository = $this->getDoctrine()->getManager()->getRepository('RadioMetalDefaultBundle:Article');
+        $repository = $this->getDoctrine()->getManager()->getRepository('EAMDefaultBundle:Article');
         $article = $repository->find($id);
 
         $dto = new FArticle();
@@ -187,7 +187,7 @@ class ArticlesController extends Controller
         $form = $this->createFormBuilder()->getForm();
 
         $em = $this->getDoctrine()->getManager();
-        $repository = $em->getRepository('RadioMetalDefaultBundle:Article');
+        $repository = $em->getRepository('EAMDefaultBundle:Article');
         $article = $repository->find($id);
 
         if ($article === null) {
@@ -210,7 +210,7 @@ class ArticlesController extends Controller
     public function supprimerPostAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $repository = $em->getRepository('RadioMetalDefaultBundle:Article');
+        $repository = $em->getRepository('EAMDefaultBundle:Article');
         $article = $repository->find($id);
 
         if ($article === null) {
@@ -249,7 +249,7 @@ class ArticlesController extends Controller
     {
         $articles = $this->getDoctrine()
                          ->getManager()
-                         ->getRepository('RadioMetalDefaultBundle:Article')
+                         ->getRepository('EAMDefaultBundle:Article')
                          ->findArticlesPublies(9, $page)
         ;
 

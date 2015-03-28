@@ -3,7 +3,6 @@
 namespace EAM\DefaultBundle\Form\Model;
 
 use Symfony\Component\Validator\Constraints as Assert;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 class Article
 {
@@ -21,11 +20,6 @@ class Article
     private $date;
 
     /**
-     * @Gedmo\Slug(fields={"titre"})
-     */
-    private $slug;
-
-    /**
      * @var \DateTime
      *
      */
@@ -37,13 +31,6 @@ class Article
      * @Assert\Length(min="8")
      */
     private $titre;
-
-    /**
-     * @var string
-     *
-     * @Assert\Length(min="2")
-     */
-    private $auteur;
 
     /**
      * @var string
@@ -61,16 +48,6 @@ class Article
      * @Assert\Valid()
      */
     private $image;
-
-    /**
-     * @var Doctrine\Common\Collections\Collection
-     */
-    private $categories;
-
-    /**
-     * @var integer
-     */
-    private $nbCommentaires;
 
     public function __construct()
     {
@@ -165,29 +142,6 @@ class Article
     }
 
     /**
-     * Set auteur
-     *
-     * @param  string  $auteur
-     * @return Article
-     */
-    public function setAuteur($auteur)
-    {
-        $this->auteur = $auteur;
-
-        return $this;
-    }
-
-    /**
-     * Get auteur
-     *
-     * @return string
-     */
-    public function getAuteur()
-    {
-        return $this->auteur;
-    }
-
-    /**
      * Set contenu
      *
      * @param  string  $contenu
@@ -257,75 +211,9 @@ class Article
     }
 
     /**
-     * set nbCommentaires
-     *
-     * @return Article
-     */
-    public function setNbCommentaires($nb)
-    {
-        $this->nbCommentaires =$nb;
-
-        return $this;
-    }
-
-    /**
-     * Get nbCommentaires
-     *
-     * @return int
-     */
-    public function getNbCommentaires()
-    {
-        return $this->nbCommentaires;
-    }
-    /**
      */
     public function updateDate()
     {
         $this->setDateModif(new \DateTime());
-    }
-    
-    /**
-     * Get Categories
-     *
-     * @return Categorie get categories
-     */
-    public function getCategories()
-    {
-        return $this->categories;
-    }
-
-    /**
-     * Set Categories
-     *
-     * @param Categorie $categories set categories
-     */
-    public function setCategories($categories)
-    {
-        $this->categories = $categories;
-
-        return $this;
-    }
-
-    /**
-     * Set slug
-     *
-     * @param  string  $slug
-     * @return Article
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
     }
 }
