@@ -1,0 +1,21 @@
+{% extends 'EAMDefaultBundle::layout.html.twig' %}
+{% block body %}
+<div class="wrapper">
+    {% include 'EAMDefaultBundle::header.html.twig' %}
+    <div class="clear"></div>
+    <div class="content">
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Row Start -->
+            <div class="row">
+                <a href="{{ path('eam_default_articles_all') }}" class="btn">Retour</a>
+                <!-- Span12 Start -->
+                <div class="span12">
+                    <h3>{{ article.titre }} - le {{ article.date|date('d/m/Y') }}</h3>
+                    <p>{{ article.contenu }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

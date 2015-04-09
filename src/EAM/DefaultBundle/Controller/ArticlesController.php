@@ -25,10 +25,7 @@ class ArticlesController extends Controller
      */
     public function ajouterAction(Request $request)
     {
-        $username = $this->getUser()->getUsername();
-        
         $article = new Article();
-        $article->setAuteur($username);
         
         $form = $this->createForm(new ArticleType, $article, ['action' => $this->generateUrl('eam_default_articles_doajouter'), 'method' => 'POST']);
 
@@ -44,30 +41,19 @@ class ArticlesController extends Controller
      */
     public function doAjouterAction(Request $request)
     {
-        $username = $this->getUser()->getUsername();
-        
         $article = new Article();
-        $article->setAuteur($username);
         
         $form = $this->createForm(new ArticleType, $article);
 
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            if ($article->getImage()) {
-                $name = $article->getImage()->getFile()->getClientOriginalName();
-
-                $uploader = new ImageUploader($this->container);
-                $uploader->upload($article->getImage()->getFile());
-
-                $article->getImage()->setUrl($uploader->getUploadDir().'/'.$name)->setAlt($name);
-            }
-
+            $article->setDate(new \DateTime());
             $em = $this->getDoctrine()->getManager();
             $em->persist($article);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('voir', array('id' => $article->getId())));
+            return $this->redirect($this->generateUrl('eam_default_articles_voir', array('id' => $article->getId())));
         }
 
         return array(
@@ -96,15 +82,11 @@ class ArticlesController extends Controller
 
         $dto = new FArticle();
         $dto->setId($article->getId());
-        $dto->setDateModif($article->getDateModif());
         $dto->setTitre($article->getTitre());
-        $dto->setAuteur($article->getAuteur());
         $dto->setContenu($article->getContenu());
-        $dto->setImage($article->getImage());
-        $dto->setCategories($article->getCategories());
         $dto->setPublication($article->getPublication());
 
-        $form = $this->createForm(new ArticleEditType, $dto, ['action' => $this->generateUrl('modifier', ['id' => $article->getId()]), 'method' => 'POST']);
+        $form = $this->createForm(new ArticleEditType, $dto, ['action' => $this->generateUrl('eam_default_articles_domodifier', ['id' => $article->getId()]), 'method' => 'POST']);
 
         return array(
             'form'   => $form->createView(),
@@ -130,15 +112,12 @@ class ArticlesController extends Controller
 
         $dto = new FArticle();
         $dto->setId($article->getId());
-        $dto->setDateModif($article->getDateModif());
+        $dto->setDateModif(new \DateTime());
         $dto->setTitre($article->getTitre());
-        $dto->setAuteur($article->getAuteur());
-        $dto->setImage($article->getImage());
         $dto->setContenu($article->getContenu());
-        $dto->setCategories($article->getCategories());
         $dto->setPublication($article->getPublication());
 
-        $form = $this->createForm(new ArticleEditType, $dto, ['action' => $this->generateUrl('modifier', ['id' => $id ]), 'method' => 'POST']);
+        $form = $this->createForm(new ArticleEditType, $dto, ['action' => $this->generateUrl('eam_default_articles_domodifier', ['id' => $id ]), 'method' => 'POST']);
 
         $form->handleRequest($request);
 
@@ -150,20 +129,11 @@ class ArticlesController extends Controller
             $article->setCategories($dto->getCategories());
             $article->setPublication($dto->getPublication());
 
-            if ($article->getImage()) {
-                $name = $article->getImage()->getFile()->getClientOriginalName();
-
-                $uploader = new ImageUploader($this->container);
-                $uploader->upload($article->getImage()->getFile());
-
-                $article->getImage()->setUrl($uploader->getUploadDir().'/'.$name)->setAlt($name);
-            }
-
             $em = $this->getDoctrine()->getManager();
             $em->flush();
             $this->get('session')->getFlashBag()->add('info', 'Article bien modifié');
 
-            return $this->redirect( $this->generateUrl('voir', array('id' => $article->getId())) );
+            return $this->redirect( $this->generateUrl('eam_default_articles_voir', array('id' => $article->getId())) );
         }
 
         return array(

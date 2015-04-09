@@ -13,9 +13,7 @@ class ArticleEditType extends AbstractType
         $builder
             ->add('id', 'hidden')
             ->add('titre',          'text')
-            ->add('dateModif',          'date')
             ->add('publication',    'checkbox')
-            ->add('image',          new ImageType(), array('required' => false))
             ->add('contenu',        'textarea')
         ;
     }

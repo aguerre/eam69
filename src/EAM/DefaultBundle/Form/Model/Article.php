@@ -28,7 +28,7 @@ class Article
     /**
      * @var string
      *
-     * @Assert\Length(min="8")
+     * @Assert\NotBlank
      */
     private $titre;
 
@@ -40,14 +40,9 @@ class Article
     private $contenu;
 
     /**
+     * @var boolean
      */
     private $publication;
-
-    /**
-     *
-     * @Assert\Valid()
-     */
-    private $image;
 
     public function __construct()
     {
@@ -185,29 +180,6 @@ class Article
     public function getPublication()
     {
         return $this->publication;
-    }
-
-    /**
-     * Set image
-     *
-     * @param  \RadioMetal\DefaultBundle\Entity\Image $image
-     * @return Article
-     */
-    public function setImage(\RadioMetal\DefaultBundle\Entity\Image $image = null)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return \RadioMetal\DefaultBundle\Entity\Image
-     */
-    public function getImage()
-    {
-        return $this->image;
     }
 
     /**

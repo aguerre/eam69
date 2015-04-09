@@ -18,8 +18,6 @@ class ArticleRepository extends EntityRepository
             throw new \InvalidArgumentException('La page ne peut être inférieur à 1 (valeur : "'.$page.'").');
         }
         $query = $this->createQueryBuilder('a')
-            ->addSelect('i')
-            ->leftJoin('a.image', 'i')
             ->where('a.publication = 1')
             ->orderBy('a.date', 'DESC')
             ->orderBy('a.id', 'DESC')

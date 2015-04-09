@@ -17,30 +17,10 @@ class ArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('date',           'date')
             ->add('titre',          'text')
-            ->add('image',          new ImageType(), array('required' => false))
             ->add('contenu',        'textarea')
+            ->add('publication',    'checkbox')
         ;
-        $factory = $builder->getFormFactory();
-
-        $builder->addEventListener(
-            FormEvents::PRE_SET_DATA,
-            function(FormEvent $event) use ($factory) {
-                $article = $event->getData();
-
-                if (null === $article) {
-                    return;
-                }
-
-                if (false === $article->getPublication()) {
-                    $event->getForm()->add(
-                    $factory->createNamed('publication', 'checkbox', null, array('required' => false)));
-                } else {
-                    $event->getForm()->remove('publication');
-                }
-            }
-        );
     }
 
     /**

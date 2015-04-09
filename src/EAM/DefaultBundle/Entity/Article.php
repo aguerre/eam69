@@ -41,7 +41,7 @@ class Article
     /**
      * @var string
      *
-     * @Assert\Length(min="8")
+     * @Assert\NotBlank
      * @ORM\Column(name="titre", type="string", length=255)
      */
     private $titre;
@@ -58,13 +58,6 @@ class Article
      * @ORM\Column(name="publication", type="boolean")
      */
     private $publication;
-
-    /**
-     *
-     * @Assert\Valid()
-     * @ORM\OneToOne(targetEntity="EAM\DefaultBundle\Entity\Image", cascade={"persist"})
-     */
-    private $image;
 
     public function __construct()
     {
@@ -194,29 +187,6 @@ class Article
     public function getPublication()
     {
         return $this->publication;
-    }
-
-    /**
-     * Set image
-     *
-     * @param  \EAM\DefaultBundle\Entity\Image $image
-     * @return Article
-     */
-    public function setImage(\EAM\DefaultBundle\Entity\Image $image = null)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return \EAM\DefaultBundle\Entity\Image
-     */
-    public function getImage()
-    {
-        return $this->image;
     }
 
     /**

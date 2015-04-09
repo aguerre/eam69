@@ -38,18 +38,55 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/albums")
-     * @Template()
+     * @Route("/all-albums")
+     * @Method({"GET"})
+     * @Template("EAMDefaultBundle:default:albums.html.twig")
      */
-    public function albumsAction()
+    public function albumsAction(Request $request)
     {
-        $albums = $this->getDoctrine()->getRepository('EAMDefaultBundle:Album')->findAll();
+        $em = $this->getDoctrine()->getManager();
+        $albums = $em->getRepository('EAMDefaultBundle:Album')->findAll();
 
         return array(
-            'albums' => $albums
+            'albums' => $albums,
+            'annee' => 'Toutes',
+            'categorie' => 'Toutes'
         );
     }
 
+    /**
+     * @Route("/albums/categorie-{categorie}", requirements={"categorie"=".+"})
+     * @Method({"GET"})
+     * @Template("EAMDefaultBundle:default:albums.html.twig")
+     */
+    public function albumsInCategorieAction(Request $request, $categorie = null)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $albums = $em->getRepository('EAMDefaultBundle:Album')->findBy(['categorie' => $categorie]);
+
+        return array(
+            'albums' => $albums,
+            'annee' => 'Toutes',
+            'categorie' => $categorie
+        );
+    }
+
+    /**
+     * @Route("/albums/annee-{annee}", requirements={"annee"="\d{4}"})
+     * @Method({"GET"})
+     * @Template("EAMDefaultBundle:default:albums.html.twig")
+     */
+    public function albumsInAnneeAction(Request $request, $annee = null)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $albums = $em->getRepository('EAMDefaultBundle:Album')->findBy(['year' => $annee]);
+
+        return array(
+            'albums' => $albums,
+            'annee' => $annee,
+            'categorie' => 'Toutes'
+        );
+    }
 
     /**
      * @Route("/album-{id}", requirements={"id"="\d+"})

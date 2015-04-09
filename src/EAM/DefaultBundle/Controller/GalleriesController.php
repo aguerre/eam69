@@ -275,7 +275,7 @@ class GalleriesController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $albums = $em->getRepository('EAMDefaultBundle:Album')->findAll();
+        $albums = $em->getRepository('EAMDefaultBundle:Album')->findAllBy(['categorie']);
         return array(
             'albums' => $albums
         );
