@@ -1,0 +1,36 @@
+{% extends 'EAMDefaultBundle::layout.html.twig' %}
+{% block body %}
+<div class="wrapper">
+    {% include 'EAMDefaultBundle::header.html.twig' %}
+    <div class="content">
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Row Start -->
+            <div class="row">
+                <a href="{{ path('eam_default_partenaires_all') }}">Retour partenaires</a>
+                <!-- Span12 Start -->
+                <div class="span12">
+                    {{ form_start(form) }}
+                    <div class="control-group">
+                        {{ form_label(form.image) }}
+                        {{ form_widget(form.image) }}
+                    </div>
+                    <div class="control-group">
+                        {{ form_label(form.nom) }}
+                        {{ form_widget(form.nom) }}
+                    </div>
+                    <div class="control-group">
+                        {{ form_label(form.lien) }}
+                        {{ form_widget(form.lien) }}
+                    </div>
+                    <div class="control-group">
+                        <input type="submit">
+                    </div>
+                    {{ form_rest(form) }}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -8,7 +8,7 @@
     <div class="breadcrumb webkit">
         <!-- Container Start -->
         <div class="container">
-            <h1 class="color">Albums photos</h1>
+            <h1 class="color">Liste des partenaires</h1>
         </div>
         <!-- Container End -->
     </div>
@@ -25,23 +25,23 @@
                 <div class="span12">
                     <!-- Latest Album Start -->
                     <div class="latest-album">
-                        <div class="heading"><h2><span class="color">Année : {{ annee }} </span> - Catégorie : {{ categorie }}</h2></div>
+                        <div class="heading"><h2><a href="{{ path('eam_default_partenaires_addpartenaire') }}"><span class="color">Créer Partenaire</span></a></h2></div>
                         <div class="minus-margin">
                             <div class="row">
                                 <div class="span12">
-                                {% for album in albums %}
+                                {% for partenaire in partenaires %}
                                     <article>
-                                        {% set firstImage = album.images|first %}
                                         <figure>
-                                            {% if firstImage is not empty %}
-                                            <a href="{{ path('eam_default_default_album', {'id': album.id }) }}"><img src="{{ firstImage.url }}" alt=""></a>
-                                            {% endif %}
+                                            <img src="{{ partenaire.image }}" alt="">
                                         </figure>
                                         <div class="text webkit">
                                             <div class="left-sec">
-                                                <h3><a href="{{ path('eam_default_default_album', {'id': album.id }) }}">{{ album.name }}</a></h3>
-                                                <p>{{ album.date|date('d/m') }}/{{ album.year }}</p>
+                                                <h3><a href="{{ path('eam_default_partenaires_all', {'id': partenaire.id }) }}">{{ partenaire.nom }}</a></h3>
+                                                {% if partenaire.lien is not empty %}
+                                                <a href="{{ partenaire.lien }}">Site web</a>
+                                                {% endif %}
                                             </div>
+                                            <a class="icon-plus webkit" href="{{ path('eam_default_partenaires_deletepartenaire', {'id': partenaire.id }) }}">X</a>
                                         </div>
                                     </article>
                                     {% if loop.index is divisible by(3) %}
@@ -57,16 +57,16 @@
                     </div>
                     <!-- Latest Album End -->
                     <!-- Pagination Start -->
-<!--                     <nav class="pagination">
-    <ul>
-        <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-    </ul>
-</nav> -->
+                    <nav class="pagination">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        </ul>
+                    </nav>
                     <!-- Pagination End -->
                 </div>
                 <!-- Span12 End -->

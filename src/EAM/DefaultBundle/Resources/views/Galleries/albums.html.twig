@@ -27,28 +27,39 @@
                     <div class="latest-album">
                         <div class="heading"><h2><a href="{{ path('eam_default_galleries_addalbum') }}"><span class="color">Créer </span> Album</a></h2></div>
                         <div class="minus-margin">
-                            {% for album in albums %}
-                            <article>
-                                {% set firstImage = album.images|first %}
-                                <figure>
-                                    {% if firstImage is not empty %}
-                                    <img src="{{ firstImage.url }}" alt="">
-                                    {% endif %}
-                                </figure>
-                                    <a href="{{ path('eam_default_galleries_addimage', { 'idAlbum': album.id }) }}">
-                                    Ajout d'une image
-                                    </a>
-                                <div class="text webkit">
-                                    <div class="left-sec">
-                                        <h3><a href="{{ path('eam_default_galleries_album', {'id': album.id }) }}">{{ album.name }}</a></h3>
-                                        <a href="{{ path('eam_default_galleries_editalbum', {'id': album.id }) }}">Modifier</a>
-                                        <p>{{ album.date|date('d/m') }}</p>
-                                        <p>{{ album.year }}</p>
-                                    </div>
-                                    <a class="icon-plus webkit" href="{{ path('eam_default_galleries_deletealbum', {'id': album.id }) }}">X</a>
+                            <div class="row">
+                                <div class="span12">
+                                {% for album in albums %}
+                                    <article>
+                                        {% set firstImage = album.images|first %}
+                                        <figure>
+                                            {% if firstImage is not empty %}
+                                            <img src="{{ firstImage.url }}" alt="">
+                                            {% endif %}
+                                        </figure>
+                                            <a href="{{ path('eam_default_galleries_addimage', { 'idAlbum': album.id }) }}">
+                                            Ajout d'une image
+                                            </a>
+                                        <div class="text webkit">
+                                            <div class="left-sec">
+                                                <h3><a href="{{ path('eam_default_galleries_album', {'id': album.id }) }}">{{ album.name }}</a></h3>
+                                                <a href="{{ path('eam_default_galleries_editalbum', {'id': album.id }) }}">Modifier</a>
+                                                <p>{{ album.date|date('d/m') }}</p>
+                                                <p>{{ album.year }}</p>
+                                            </div>
+                                            <a class="icon-plus webkit" href="{{ path('eam_default_galleries_deletealbum', {'id': album.id }) }}">X</a>
+                                        </div>
+                                    </article>
+                                    {% if loop.index is divisible by(3) %}
                                 </div>
-                            </article>
-                            {% endfor %}
+                            </div>
+                            <div class="row">
+                                <div class="span12">
+                                    {% endif %}
+
+                                {% endfor %}
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- Latest Album End -->

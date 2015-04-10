@@ -1,0 +1,40 @@
+{% extends 'EAMDefaultBundle::layout.html.twig' %}
+{% block body %}
+<div class="wrapper">
+    {% include 'EAMDefaultBundle::header.html.twig' %}
+    <div class="clear"></div>
+    <div class="content">
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Row Start -->
+            <div class="row">
+                <a href="{{ path('eam_default_articles_all') }}" class="btn">Retour</a>
+                <!-- Span12 Start -->
+                <div class="span12">
+                    {{ form_start(form, {'attr': { 'class': 'form-horizontal' }}) }}
+                    <div class="control-group">
+                        {{ form_label(form.titre) }}
+                        {{ form_widget(form.titre, {'attr': { 'class': 'form-control' }}) }}
+                    </div>
+                    <div class="control-group">
+                        {{ form_label(form.contenu) }}
+                        {{ form_widget(form.contenu, {'attr': { 'class': 'form-control' }}) }}
+                    </div>
+                    <div class="control-group">
+                        {{ form_label(form.publication) }}
+                        {{ form_widget(form.publication, {'attr': { 'class': 'form-control' }}) }}
+                    </div>
+                    <div class="row">
+                        <div class="span12">
+                            <div class="control-group">
+                                <input type="submit" class="btn">
+                            </div>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
