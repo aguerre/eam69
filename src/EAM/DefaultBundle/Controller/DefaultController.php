@@ -100,12 +100,12 @@ class DefaultController extends Controller
         $realCategories = [
             "competition" => "Compétition",
             "entrainement" => "Entrainement",
-            "Manifestations" => "manifestations"
+            "manifestations" => "Manifestations"
         ];
 
         $realCategorie = null;
         foreach ($realCategories as $fake => $real) {
-            if($fake === $categorie) {
+            if ($fake === $categorie) {
                 $realCategorie = $real;
             }
         }
