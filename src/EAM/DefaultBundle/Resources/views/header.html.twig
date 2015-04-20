@@ -31,23 +31,17 @@
         <!-- Container End -->
     </div>
     <!-- Top Strip End -->
-    <!-- Header Middle Section Start -->
-    <div class="head-middle-sec">
-        <!-- Container Start -->
-        <div class="container">
-            <!-- Logo Start -->
-            <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt=""></a>
-            </div>
-            <!-- Logo End -->
-        </div>
-        <!-- Container End -->
-    </div>
-    <!-- Header Middle Section End -->
     <!-- Navigation Start -->
     <div class="navigation">
         <div class="container">
             <a class="cs-click-menu webkit"><i class="fa fa-bars"></i></a>
+            <div class=" pull-left min-logo">
+                <a href="{{ path('eam_default_default_index') }}">
+                    {% image '@EAMDefaultBundle/Resources/public/images/logo.png' %}
+                    <img src="{{ asset_url }}" alt="" />
+                    {% endimage %}
+                </a>
+            </div>
             <ul id="menus">
                 <li><a href="{{ path('eam_default_default_index') }}">Accueil</a></li>
                 <li><a href="#">Albums</a>
@@ -55,10 +49,10 @@
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         <li><a href="{{ path('eam_default_galleries_albums') }}">Administration albums</a></li>
                         {% endif %}
-                        <li><a href="{{ path('eam_default_default_albumsincategorie', {'categorie': 'Tous'}) }}">Tous les albums</a></li>
-                        <li><a href="{{ path('eam_default_default_albumsincategorie', {'categorie': 'Compétition'}) }}">Compétitions</a></li>
-                        <li><a href="{{ path('eam_default_default_albumsincategorie', {'categorie': 'Entrainement'}) }}">Entrainements</a></li>
-                        <li><a href="{{ path('eam_default_default_albumsincategorie', {'categorie': 'Manifestations'}) }}">Manifestations</a></li>
+                        <li><a href="{{ path('eam_default_default_albums') }}">Tous les albums</a></li>
+                        <li><a href="{{ path('eam_default_default_albumsincategorie', {'categorie': 'competition'}) }}">Compétitions</a></li>
+                        <li><a href="{{ path('eam_default_default_albumsincategorie', {'categorie': 'entrainement'}) }}">Entrainements</a></li>
+                        <li><a href="{{ path('eam_default_default_albumsincategorie', {'categorie': 'manifestations'}) }}">Manifestations</a></li>
                     </ul>
                 </li>
                 <li><a href="event.html">Événements</a>

@@ -6665,12 +6665,27 @@ hgroup h1,hgroup h2,hgroup h3,hgroup h4,hgroup h5,hgroup h6{
     color: #fff;
 }
 
+.navigation ul li a {
+    font-size: 17px;
+}
+.min-logo a {
+    display: block;
+    padding: 8px 24px;
+}
+.min-logo img {
+    max-height: 50px;
+}
+
 ul.slides {
-	margin-bottom: 0;
-	float: none;
+    margin-bottom: 0;
+    float: none;
+}
+ul.slides li {
+    float: none;
 }
 ul.slides li img {
-	display: block;
-	width: 1370px;
-	margin: 0 auto;
+    display: block;
+    width: auto;
+    height: 400px;
+    margin: 0 auto;
 }

@@ -38,6 +38,42 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route(path="/contact")
+     * @Template("RadioMetalDefaultBundle:Default:contact.html.twig")
+     * @Method({"POST"})
+     */
+    public function sendContactAction(Request $request)
+    {
+        $model = new Contact;
+        $type  = new ContactType;
+        $form  = $this->get('form.factory')->create($type, $model);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+
+            $message = \Swift_Message::newInstance()
+                    ->setSubject('Contact site web')
+                    ->setFrom($model->getEmail())
+                    ->setTo('e.a.m69@orange.fr')
+                    ->setBody(
+                        $this->renderView(
+                            'EAMDefaultBundle:Email:email.txt.twig',
+                            array(
+                                'nom'     => $model->getNom(),
+                                'email'   => $model->getEmail(),
+                                'sujet'   => $model->getSujet(),
+                                'message' => $model->getMessage()
+                            )
+                        )
+                    )
+            ;
+            $this->get('mailer')->send($message);
+        }
+        
+        return $this->redirect($this->generateUrl('contact'));
+    }
+
+    /**
      * @Route("/all-albums")
      * @Method({"GET"})
      * @Template("EAMDefaultBundle:default:albums.html.twig")
@@ -59,15 +95,28 @@ class DefaultController extends Controller
      * @Method({"GET"})
      * @Template("EAMDefaultBundle:default:albums.html.twig")
      */
-    public function albumsInCategorieAction(Request $request, $categorie = null)
+    public function albumsInCategorieAction(Request $request, $categorie)
     {
+        $realCategories = [
+            "competition" => "Compétition",
+            "entrainement" => "Entrainement",
+            "Manifestations" => "manifestations"
+        ];
+
+        $realCategorie = null;
+        foreach ($realCategories as $fake => $real) {
+            if($fake === $categorie) {
+                $realCategorie = $real;
+            }
+        }
+
         $em = $this->getDoctrine()->getManager();
-        $albums = $em->getRepository('EAMDefaultBundle:Album')->findBy(['categorie' => $categorie]);
+        $albums = $em->getRepository('EAMDefaultBundle:Album')->findBy(['categorie' => $realCategorie]);
 
         return array(
             'albums' => $albums,
             'annee' => 'Toutes',
-            'categorie' => $categorie
+            'categorie' => $realCategorie
         );
     }
 
