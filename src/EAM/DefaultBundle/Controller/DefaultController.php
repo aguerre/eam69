@@ -111,7 +111,7 @@ class DefaultController extends Controller
         }
 
         $em = $this->getDoctrine()->getManager();
-        $albums = $em->getRepository('EAMDefaultBundle:Album')->findBy(['categorie' => $realCategorie]);
+        $albums = $em->getRepository('EAMDefaultBundle:Album')->findByCategorie($realCategorie);
 
         return array(
             'albums' => $albums,
