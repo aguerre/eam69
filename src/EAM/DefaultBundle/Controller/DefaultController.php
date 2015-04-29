@@ -32,7 +32,7 @@ class DefaultController extends Controller
 
         $form = $this->get('form.factory')->create($type, $model);
 
-    	return array(
+        return array(
             'form' => $form->createView()
         );
     }
