@@ -156,4 +156,34 @@ class DefaultController extends Controller
             'album' => $album
         );
     }
+
+    /**
+     * @Route("/palmares")
+     * @Method({"GET", "POST"})
+     * @Template
+     */
+    public function palmaresAction(Request $request)
+    {
+        return array();
+    }
+
+    /**
+     * @Route("/resultats") 
+     * @Method({"GET", "POST"})
+     * @Template
+     */
+    public function resultatsAction(Request $request)
+    {
+        return array();
+    }
+
+    /**
+     * @Route("/records") 
+     * @Method({"GET", "POST"})
+     * @Template
+     */
+    public function recordsAction(Request $request)
+    {
+        return array();
+    }
 }
