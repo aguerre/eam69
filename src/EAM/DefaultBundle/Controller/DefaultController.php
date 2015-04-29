@@ -98,7 +98,7 @@ class DefaultController extends Controller
     public function albumsInCategorieAction(Request $request, $categorie)
     {
         $realCategories = [
-            "competition" => "Compétition",
+            "competition" => "Competition",
             "entrainement" => "Entrainement",
             "manifestations" => "Manifestations"
         ];
