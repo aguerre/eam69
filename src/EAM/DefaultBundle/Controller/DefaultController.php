@@ -76,7 +76,7 @@ class DefaultController extends Controller
     /**
      * @Route("/all-albums")
      * @Method({"GET"})
-     * @Template("EAMDefaultBundle:default:albums.html.twig")
+     * @Template("EAMDefaultBundle:Default:albums.html.twig")
      */
     public function albumsAction(Request $request)
     {
@@ -93,7 +93,7 @@ class DefaultController extends Controller
     /**
      * @Route("/albums/categorie-{categorie}", requirements={"categorie"=".+"})
      * @Method({"GET"})
-     * @Template("EAMDefaultBundle:default:albums.html.twig")
+     * @Template("EAMDefaultBundle:Default:albums.html.twig")
      */
     public function albumsInCategorieAction(Request $request, $categorie)
     {
@@ -123,7 +123,7 @@ class DefaultController extends Controller
     /**
      * @Route("/albums/annee-{annee}", requirements={"annee"="\d{4}"})
      * @Method({"GET"})
-     * @Template("EAMDefaultBundle:default:albums.html.twig")
+     * @Template("EAMDefaultBundle:Default:albums.html.twig")
      */
     public function albumsInAnneeAction(Request $request, $annee = null)
     {
