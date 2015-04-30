@@ -32,7 +32,7 @@ class DefaultController extends Controller
 
         $form = $this->get('form.factory')->create($type, $model);
 
-    	return array(
+        return array(
             'form' => $form->createView()
         );
     }
@@ -98,7 +98,7 @@ class DefaultController extends Controller
     public function albumsInCategorieAction(Request $request, $categorie)
     {
         $realCategories = [
-            "competition" => "Compétition",
+            "competition" => "Competition",
             "entrainement" => "Entrainement",
             "manifestations" => "Manifestations"
         ];
@@ -111,7 +111,7 @@ class DefaultController extends Controller
         }
 
         $em = $this->getDoctrine()->getManager();
-        $albums = $em->getRepository('EAMDefaultBundle:Album')->findBy(['categorie' => $realCategorie]);
+        $albums = $em->getRepository('EAMDefaultBundle:Album')->findByCategorie($realCategorie);
 
         return array(
             'albums' => $albums,
@@ -155,5 +155,35 @@ class DefaultController extends Controller
         return array(
             'album' => $album
         );
+    }
+
+    /**
+     * @Route("/palmares")
+     * @Method({"GET", "POST"})
+     * @Template
+     */
+    public function palmaresAction(Request $request)
+    {
+        return array();
+    }
+
+    /**
+     * @Route("/resultats") 
+     * @Method({"GET", "POST"})
+     * @Template
+     */
+    public function resultatsAction(Request $request)
+    {
+        return array();
+    }
+
+    /**
+     * @Route("/records") 
+     * @Method({"GET", "POST"})
+     * @Template
+     */
+    public function recordsAction(Request $request)
+    {
+        return array();
     }
 }
