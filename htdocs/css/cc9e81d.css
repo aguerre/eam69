@@ -6689,3 +6689,10 @@ ul.slides li img {
     height: 400px;
     margin: 0 auto;
 }
+article figure {
+    text-align: center;
+}
+article figure a i:before {
+    color: #aaaaaa;
+    font-size: 74px;
+}

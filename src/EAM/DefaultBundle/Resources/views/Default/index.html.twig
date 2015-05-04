@@ -114,9 +114,9 @@
                             </article>
                             <article>
                                 <figure>
-                                    <a href="{{ path('eam_default_default_resultats') }}"><i class="fa fa-grid"></i></a>
+                                    <a href="{{ path('eam_default_default_resultats') }}"><i class="fa fa-newspapar-o"></i></a>
                                     <figcaption>
-                                        <a href="#"></a>
+                                        <a href="{{ path('eam_default_default_resultats') }}"></a>
                                     </figcaption>
                                 </figure>
                                 <div class="user-text">
@@ -128,9 +128,9 @@
                             </article>
                             <article>
                                 <figure>
-                                    <a href="{{ path('eam_default_default_palmares') }}"><i class="fa fa-user"></i></a>
+                                    <a href="{{ path('eam_default_default_palmares') }}"><i class="fa fa-star"></i></a>
                                     <figcaption>
-                                        <a href="#"></a>
+                                        <a href="{{ path('eam_default_default_palmares') }}"></a>
                                     </figcaption>
                                 </figure>
                                 <div class="user-text">
@@ -142,9 +142,9 @@
                             </article>
                             <article>
                                 <figure>
-                                    <a href="{{ path('eam_default_default_records') }}"><i class="fa fa-user"></i></a>
+                                    <a href="{{ path('eam_default_default_records') }}"><i class="fa fa-trophy"></i></a>
                                     <figcaption>
-                                        <a href="#"></a>
+                                        <a href="{{ path('eam_default_default_records') }}"></a>
                                     </figcaption>
                                 </figure>
                                 <div class="user-text">
@@ -161,19 +161,19 @@
                 <!-- Span12 End -->
                 <!-- Span4 Start -->
                 <div class="span4">
-                    <div class="heading"><h2><span class="color">Recent </span> Posts</h2></div>
+                    {% if article is defined and article is not empty %}
+                    <div class="heading"><h2><span class="color">Dernier </span> article</h2></div>
                     <div class="blog-v2 webkit slide-view">
                         <article class="featured">
                             <figure>
                                 <div class="flexslider">
                                     <ul class="slides">
                                         <li>
-                                            <a href="blog-detail.html"><img src="images/blog_slider_1.jpg" alt=""></a>
                                             <div class="clear"></div>
                                             <div class="text">
-                                                <h3><a href="blog-detail.html" class="colorhover">DJ Charlie White</a></h3>
-                                                <p>Dorem ipsum dolor sit amet, consetetur sadips cing elitr, sed diam nonumy eirmod. Lorem ipsum dolor sit amet. </p>
-                                                <a class="bgcolor nr-readmore" href="blog-detail.html">Read More</a>
+                                                <h3><a href="blog-detail.html" class="colorhover">{{ article.titre }}</a></h3>
+                                                <p>{{ article.contenu }}</p>
+                                                <!-- <a class="bgcolor nr-readmore" href="">Lire l'article</a> -->
                                             </div>
                                         </li>
                                     </ul>
@@ -182,13 +182,14 @@
                             </figure>
                         </article>
                     </div>
+                    {% endif %}
                 </div>
                 <!-- Span4 Start -->
                 <!-- Span12 Start -->
                 <div class="span12">
                     <!-- Upcooming Event Start -->
                     <div class="upcoming-event">
-                        <div class="heading"><h2><span class="color">Upcoming </span> Events</h2></div>
+                        <div class="heading"><h2><span class="color">Événement</span> à venir</h2></div>
                         <div class="minus-margin">
                             <article>
                                 <div class="top-text">
@@ -201,30 +202,8 @@
                                     <div class="sec webkit">
                                         <div class="desc-head">
                                             <ul>
-                                                <li><span class="color">When</span> <p>30 September 2013 | 11:30PM</p></li>
-                                                <li><span class="color">where</span> <p>Massive Club London, Leytonstone 13</p></li>
-                                                <li><span class="color">Featuring</span> <p><a href="#">Etiam,</a> Porta, Sem malesuada, <a href="#">Mangna</a></p></li>
-                                                <li><span class="color">Tickets</span> <p>Free | <a href="#">Now Available</a></p></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article>
-                                <div class="top-text">
-                                    <h3>Melbourne City Hall</h3>
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
-                                    <a class="bgcolor" href="event-detail.html">More</a>
-                                </div>
-                                <div class="bottom-text">
-                                    <figure><a href="event-detail.html"><img src="images/event2.jpg" alt=""></a></figure>
-                                    <div class="sec webkit">
-                                        <div class="desc-head">
-                                            <ul>
-                                                <li><span class="color">When</span> <p>30 September 2013 | 11:30PM</p></li>
-                                                <li><span class="color">where</span> <p>Massive Club London, Leytonstone 13</p></li>
-                                                <li><span class="color">Featuring</span> <p><a href="#">Etiam,</a> Porta, Sem malesuada, <a href="#">Mangna</a></p></li>
-                                                <li><span class="color">Tickets</span> <p>Free | <a href="#">Now Available</a></p></li>
+                                                <li><span class="color">Quand</span> <p>30 September 2013 | 11:30PM</p></li>
+                                                <li><span class="color">Lieu</span> <p>Massive Club London, Leytonstone 13</p></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -243,8 +222,8 @@
         <div class="parallex-count margin-bottom" data-speed="2" data-type="background">
             <!-- Container Start -->
             <div class="container">
-                <div class="heading"><h2><span class="color">Next </span> Event</h2></div>
-                <div id="DateCountdown" class="date-count-down" data-date="2014-12-12 00:00:00"></div>
+                <div class="heading"><h2><span class="color">Prochain </span> Événement</h2></div>
+                <div id="DateCountdown" class="date-count-down" data-date="2015-12-12 00:00:00"></div>
             </div>
             <!-- Container End -->
         </div>
@@ -257,36 +236,33 @@
                 <div class="span12">
                     <!-- Latest Album Start -->
                     <div class="latest-album">
-                        <div class="heading"><h2><span class="color">Latest </span> Album</h2></div>
+                        <div class="heading"><h2><span class="color">Toutes les </span>Saisons</h2></div>
                         <div class="minus-margin">
                             <article>
-                                <figure><a href="#"><img src="images/latest-album6.jpg" alt=""></a></figure>
                                 <div class="text webkit">
                                     <div class="left-sec">
-                                        <h3><a href="#">Behind the Scens</a></h3>
-                                        <p>Nonumy eirmod tempor</p>
+                                        <h3><a href="{{ path('eam_default_default_albums')}}">Photos</a></h3>
+                                        <p>Les photos de Nicolas !</p>
                                     </div>
-                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
+                                    <a class="icon-plus webkit" href="{{ path('eam_default_default_albums') }}"><i class="fa fa-plus fa-2x"></i></a>
                                 </div>
                             </article>
                             <article>
-                                <figure><a href="#"><img src="images/latest-album3.jpg" alt=""></a></figure>
                                 <div class="text webkit">
                                     <div class="left-sec">
-                                        <h3><a href="#">Behind the Scens</a></h3>
-                                        <p>Nonumy eirmod tempor</p>
+                                        <h3><a href="{{ path('eam_default_default_resultats')}}">Résultats</a></h3>
+                                        <p>Tous les résultats</p>
                                     </div>
-                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
+                                    <a class="icon-plus webkit" href="{{ path('eam_default_default_resultats')}}"><i class="fa fa-plus fa-2x"></i></a>
                                 </div>
                             </article>
                             <article>
-                                <figure><a href="#"><img src="images/latest-album7.jpg" alt=""></a></figure>
                                 <div class="text webkit">
                                     <div class="left-sec">
-                                        <h3><a href="#">Behind the Scens</a></h3>
-                                        <p>Nonumy eirmod tempor</p>
+                                        <h3><a href="{{ path('eam_default_default_records')}}">Records</a></h3>
+                                        <p>Tous les records de Nicolas !</p>
                                     </div>
-                                    <a class="icon-plus webkit" href="#"><i class="fa fa-plus fa-2x"></i></a>
+                                    <a class="icon-plus webkit" href="{{ path('eam_default_default_records')}}"><i class="fa fa-plus fa-2x"></i></a>
                                 </div>
                             </article>
                         </div>
@@ -302,62 +278,12 @@
             <div class="top-sec">
                 <div class="heading"><h2><span class="color">Photo </span> Gallery</h2></div>
                 <ul id="portfolio-filter">
-                    <li><a href="#all" title="">All</a></li>
-                    <li><a href="#design" title="Business" data-rel="design">Business</a></li>
-                    <li><a href="#partner" title="Web Design" data-rel="partner">Web Design</a></li>
-                    <li><a href="#political" title="Photography" data-rel="political">Photography</a></li>
+                    <li><a href="#all" title="">Toutes</a></li>
+                    <li><a href="#design" title="Business" data-rel="design">Entrainement</a></li>
+                    <li><a href="#partner" title="Web Design" data-rel="partner">Compétition</a></li>
+                    <li><a href="#political" title="Photography" data-rel="political">Manifestations</a></li>
                 </ul>
             </div>
-            <!-- Container Start -->
-            <div class="container">
-                <div class="boundingBox portfolio-filter kf-gallery-pp" id="content">
-                    <ul id="portfolio-list">
-                        <li class="business ecommerce partner cms programming jquery search">
-                            <div>
-                                <figure><img src="images/gal-1.jpg" alt="">
-                                    <figcaption><a data-rel="prettyphoto[]" href="images/gallery-img1.jpg" class="fa fa-plus"></a></figcaption>
-                                </figure>
-                            </div>
-                        </li>
-                        <li class="nonprofit partner cms jquery">
-                            <div>
-                                <figure><img src="images/gal-2.jpg" alt="">
-                                    <figcaption><a data-rel="prettyphoto[]" href="images/gallery-img2.jpg" class="fa fa-plus"></a></figcaption>
-                                </figure>
-                            </div>
-                        </li>
-                        <li class="business design">
-                            <div>
-                                <figure><img src="images/gal-3.jpg" alt="">
-                                    <figcaption><a data-rel="prettyphoto[]" href="images/gallery-img3.jpg" class="fa fa-plus"></a></figcaption>
-                                </figure>
-                            </div>
-                        </li>
-                        <li class="nonprofit university design cms jquery video">
-                            <div>
-                                <figure><img src="images/gal-4.jpg" alt="">
-                                    <figcaption><a data-rel="prettyphoto[]" href="images/gallery-img4.jpg" class="fa fa-plus"></a></figcaption>
-                                </figure>
-                            </div>
-                        </li>
-                        <li class="political design cms">
-                            <div>
-                                <figure><img src="images/gal-5.jpg" alt="">
-                                    <figcaption><a data-rel="prettyphoto[]" href="images/gallery-img5.jpg" class="fa fa-plus"></a></figcaption>
-                                </figure>
-                            </div>
-                        </li>
-                        <li class="university partner design cms jquery">
-                            <div>
-                                <figure><img src="images/gal-6.jpg" alt="">
-                                    <figcaption><a data-rel="prettyphoto[]" href="images/gallery-img6.jpg" class="fa fa-plus"></a></figcaption>
-                                </figure>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Container End -->
         </div>
         <!-- Parallex End -->
         <div class="clear"></div>

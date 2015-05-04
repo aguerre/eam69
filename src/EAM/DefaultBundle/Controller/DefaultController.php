@@ -18,7 +18,12 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        $repo = $this->getDoctrine()->getManager()->getRepository('EAMDefaultBundle:Article');
+        $article = $repo->findBy(["publication" => "true"], ["date" => "DESC"]);
+
+        return array(
+            "article" => $article
+        );
     }
 
     /**
