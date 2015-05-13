@@ -35,7 +35,13 @@ class DefaultController extends Controller
         $model = new Contact();
         $type = new ContactType();
 
-        $form = $this->get('form.factory')->create($type, $model);
+        $form = $this->get('form.factory')->create($type, $model, [
+            'action' => $this->generateUrl('eam_default_default_sendcontact'),
+            'method' => 'POST',
+            'attr' => array(
+                'novalidate' => 'novalidate'
+            )
+        ]);
 
         return array(
             'form' => $form->createView()
@@ -44,16 +50,23 @@ class DefaultController extends Controller
 
     /**
      * @Route(path="/contact")
-     * @Template("RadioMetalDefaultBundle:Default:contact.html.twig")
+     * @Template("EAMDefaultBundle:Default:contact.html.twig")
      * @Method({"POST"})
      */
     public function sendContactAction(Request $request)
     {
-        $model = new Contact;
-        $type  = new ContactType;
-        $form  = $this->get('form.factory')->create($type, $model);
+        $model = new Contact();
+        $type  = new ContactType();
+        $form = $this->get('form.factory')->create($type, $model, [
+            'action' => $this->generateUrl('eam_default_default_sendcontact'),
+            'method' => 'POST',
+            'attr' => array(
+                'novalidate' => 'novalidate'
+            )
+        ]);
         $form->handleRequest($request);
 
+        var_dump($form->isValid());die;
         if ($form->isValid()) {
 
             $message = \Swift_Message::newInstance()
@@ -74,8 +87,11 @@ class DefaultController extends Controller
             ;
             $this->get('mailer')->send($message);
         }
-        
-        return $this->redirect($this->generateUrl('contact'));
+
+        return array(
+            'form' => $form->createView(),
+        );
+
     }
 
     /**
