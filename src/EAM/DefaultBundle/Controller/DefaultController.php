@@ -29,8 +29,9 @@ class DefaultController extends Controller
     /**
      * @Route("/contact")
      * @Template()
+     * @Method({"GET"})
      */
-    public function contactAction()
+    public function contactAction(Request $request)
     {
         $model = new Contact();
         $type = new ContactType();
@@ -64,15 +65,15 @@ class DefaultController extends Controller
                 'novalidate' => 'novalidate'
             )
         ]);
-        $form->handleRequest($request);
 
-        var_dump($form->isValid());die;
+        $form->handleRequest($request);
+        $success = false;
         if ($form->isValid()) {
 
             $message = \Swift_Message::newInstance()
                     ->setSubject('Contact site web')
                     ->setFrom($model->getEmail())
-                    ->setTo('e.a.m69@orange.fr')
+                    ->setTo('contact@eam-69.fr')
                     ->setBody(
                         $this->renderView(
                             'EAMDefaultBundle:Email:email.txt.twig',
@@ -85,11 +86,14 @@ class DefaultController extends Controller
                         )
                     )
             ;
+
             $this->get('mailer')->send($message);
+            $success = true;
         }
 
         return array(
             'form' => $form->createView(),
+            'success' => $success
         );
 
     }
