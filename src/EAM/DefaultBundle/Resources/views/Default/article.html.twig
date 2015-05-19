@@ -1,0 +1,39 @@
+{% extends 'EAMDefaultBundle::layout.html.twig' %}
+{% block body %}
+<!--- Wrapper Start -->
+<div class="wrapper">
+    {% include 'EAMDefaultBundle::header.html.twig' %}
+    <div class="clear"></div>
+    <!-- Content Start -->
+    <div class="content">
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Row Start -->
+            <div class="row">
+                <!-- Span12 Start -->
+                <div class="span12">
+                    <!-- Gallery Start -->
+                    <div class="gallery-page kf-gallery-pp">
+                        <div class="heading"><h2>{{ article.titre }}</h2></div>
+                        <div class="minus-margin gallery-four-col">
+                            <article>
+                                <figure>
+                                    <p>{{ article.contenu|raw }}</p>
+                                </figure>
+                            </article>
+                        </div>
+                    </div>
+                    <!-- Gallery End -->
+                    <!-- Pagination Start -->
+                </div>
+                <!-- Span12 End -->
+            </div>
+            <!-- Row End -->
+        </div>
+        <!-- Container End -->
+    </div>
+    <!-- Content End -->
+    {% include 'EAMDefaultBundle::footer.html.twig' %}
+</div>
+<!--- Wrapper End -->
+{% endblock %}

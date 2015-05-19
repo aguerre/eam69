@@ -95,7 +95,6 @@ class DefaultController extends Controller
             'form' => $form->createView(),
             'success' => $success
         );
-
     }
 
     /**
@@ -210,5 +209,57 @@ class DefaultController extends Controller
     public function recordsAction(Request $request)
     {
         return array();
+    }
+
+    /**
+     * @Route("/partenaires") 
+     * @Method({"GET", "POST"})
+     * @Template
+     */
+    public function partenairesAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('EAMDefaultBundle:Partenaire');
+        $partenaires = $repository->findAll();
+
+        return array(
+            "partenaires" => $partenaires
+        );
+    }
+
+    /**
+     * @Route("/articles") 
+     * @Method({"GET", "POST"})
+     * @Template
+     */
+    public function articlesAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('EAMDefaultBundle:Article');
+        $articles = $repository->findAll();
+
+        return array(
+            "articles" => $articles
+        );
+    }
+
+    /**
+     * @Route("/article-{id}", requirements={"id"="\d+"})
+     * @Method({"GET"})
+     * @Template
+     */
+    public function articleAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('EAMDefaultBundle:Article');
+        $article = $repository->find($id);
+
+        if ($article === null) {
+            throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
+        }
+
+        return array(
+            'article' => $article
+        );
     }
 }
