@@ -16,75 +16,6 @@
         </div>
     </div>
     <!--- Banner End -->
-    <!-- Player Start -->
-    <div class="plyer-sec webkit">
-    {# <!-- Audio Plyer Strat -->
-     <div class="audio-plyer webkit">
-            <div class="container">
-                <div id="player">
-                    <div id="jquery_jplayer_n" class="jp-jplayer"></div>
-                    <div id="jp_container_n" class="jp-audio">
-                        <div class="jp-type-playlist">
-                            <div class="jp-gui">
-                                <div class="jp-interface">
-                                    <div class="jp-controls-holder">
-                                        <ul class="jp-controls audio-control">
-                                            <li>
-                                                <a href="javascript:;" class="jp-previous color" tabindex="1"> <em class="fa fa-backward"></em>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;" class="jp-play color" tabindex="1"> <em class="fa fa-play"></em>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;" class="jp-pause color" tabindex="1">
-                                                    <em class="fa fa-pause"></em>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;" class="jp-next color" tabindex="1">
-                                                    <em class="fa fa-forward"></em>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <div class="main-progress">
-                                            <div class="jp-progress">
-                                                <div class="jp-seek-bar">
-                                                    <div class="jp-play-bar bgcolor"></div>
-                                                </div>
-                                            </div>
-                                            <div class="jp-current-time"></div>
-                                            <div class="jp-duration"></div>
-                                            <div class="volume-wrap">
-                                                <a title="mute" tabindex="1" class="jp-mute" href="javascript:;"><em class="fa fa-volume-down"></em></a>
-                                                <a title="unmute" tabindex="1" class="jp-unmute" href="javascript:;" style="display: none;"><em class="fa fa-volume-off"></em></a>
-                                                <div class="jp-volume-bar">
-                                                    <div class="jp-volume-bar-value bgcolor" style="width: 80%;"></div>
-                                                </div>
-                                                <a title="max volume" tabindex="1" class="jp-volume-max" href="javascript:;"><em class="fa fa-volume-up"></em></a>
-                                            </div>
-                                            <a href="#playheader" class="jp-playlist-icon btntoggle webkit"><em class="fa fa-headphones fa-2x"></em><span class="color">CRAS LOBORTIS AUGUE-JHON DOE</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jp-playlist " id="playheader">
-                                <div class="wrapper-payerlsit">
-                                <ul>
-                                    <!-- The method Playlist.displayPlaylist() uses this unordered list -->                    
-                                    <li></li>
-                                </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-   <!-- Audio Plyer End -->
-    </div> #}
-    <!-- Player End -->
     <div class="clear"></div>
     <!-- Content Start -->
     <div class="content">
@@ -191,6 +122,24 @@
                     <div class="upcoming-event">
                         <div class="heading"><h2><span class="color">Événement</span> à venir</h2></div>
                         <div class="minus-margin">
+                            {% if article is not empty %}
+                            <article>
+                                <div class="top-text">
+                                    <h3>{{ article.titre }}</h3>
+                                    <p>{{ article.contenu|raw }}</p>
+                                </div>
+                                <div class="bottom-text">
+                                    <figure><a href="event-detail.html"><img src="images/event1.jpg" alt=""></a></figure>
+                                    <div class="sec webkit">
+                                        <div class="desc-head">
+                                            <ul>
+                                                <li><span class="color">Quand</span> <p>{{ article.date }}</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            {% endif %}
                             <article>
                                 <div class="top-text">
                                     <h3>Melbourne City Hall</h3>
@@ -265,6 +214,15 @@
                                     <a class="icon-plus webkit" href="{{ path('eam_default_default_records')}}"><i class="fa fa-plus fa-2x"></i></a>
                                 </div>
                             </article>
+                            <article>
+                                <div class="text webkit">
+                                    <div class="left-sec">
+                                        <h3><a href="{{ path('eam_default_default_palmares')}}">Palmarès</a></h3>
+                                        <p>Le palmarès de Nicolas !</p>
+                                    </div>
+                                    <a class="icon-plus webkit" href="{{ path('eam_default_default_palmares')}}"><i class="fa fa-plus fa-2x"></i></a>
+                                </div>
+                            </article>
                         </div>
                     </div>
                     <!-- Latest Album End -->
@@ -276,13 +234,27 @@
         <!-- Parallex Start -->
         <div class="parallex" data-speed="2" data-type="background">
             <div class="top-sec">
-                <div class="heading"><h2><span class="color">Photo </span> Gallery</h2></div>
-                <ul id="portfolio-filter">
-                    <li><a href="#all" title="">Toutes</a></li>
-                    <li><a href="#design" title="Business" data-rel="design">Entrainement</a></li>
-                    <li><a href="#partner" title="Web Design" data-rel="partner">Compétition</a></li>
-                    <li><a href="#political" title="Photography" data-rel="political">Manifestations</a></li>
-                </ul>
+                <div class="heading"><h2><span class="color">Nos </span> Partenaires</h2></div>
+                <div class="clearfix latest-album">
+                {% for partenaire in partenaires %}
+                    <article>
+                        <figure>
+                            {% if partenaire.image is not empty %}
+                            <a href="{{ partenaire.lien }}"><img src="{{ partenaire.image }}" alt=""></a>
+                            {% endif %}
+                        </figure>
+                        <div class="text webkit">
+                            <div class="left-sec">
+                                <h3><a href="{{ partenaire.lien }}">{{ partenaire.nom }}</a></h3>
+                            </div>
+                        </div>
+                    </article>
+                    {% if loop.index is divisible by(4) %}
+                </div>
+                <div class="clearfix latest-album">
+                    {% endif %}
+                {% endfor %}
+                </div>
             </div>
         </div>
         <!-- Parallex End -->

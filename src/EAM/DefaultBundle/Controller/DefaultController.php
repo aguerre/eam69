@@ -18,11 +18,14 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $repo = $this->getDoctrine()->getManager()->getRepository('EAMDefaultBundle:Article');
-        $article = $repo->findBy(["publication" => "true"], ["date" => "DESC"]);
+        $repoArticle = $this->getDoctrine()->getManager()->getRepository('EAMDefaultBundle:Article');
+        $repoPartenaire = $this->getDoctrine()->getManager()->getRepository('EAMDefaultBundle:Partenaire');
+        $article = $repoArticle->findBy(["publication" => "true"], ["date" => "DESC"]);
+        $partenaires = $repoPartenaire->findAll();
 
         return array(
-            "article" => $article
+            "article" => $article,
+            "partenaires" => $partenaires
         );
     }
 
