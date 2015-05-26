@@ -75,7 +75,7 @@ class DefaultController extends Controller
 
             $message = \Swift_Message::newInstance()
                     ->setSubject('Contact site web')
-                    ->setFrom($model->getEmail())
+                    ->setFrom('contact@eam69.fr')
                     ->setTo('e.a.m.69@orange.fr')
                     ->setBody(
                         $this->renderView(
