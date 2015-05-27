@@ -78,9 +78,6 @@ swiftmailer:
     password:   "%mailer_password%"
     auth_mode:  "%mailer_auth_mode%"
     encryption: "%mailer_encryption%"
-    spool:
-        type: file
-        path: '%kernel.root_dir%/app/spool'
 
 fos_user:
     db_driver: orm
