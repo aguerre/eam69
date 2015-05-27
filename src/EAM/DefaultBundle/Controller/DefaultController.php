@@ -76,7 +76,7 @@ class DefaultController extends Controller
             $message = \Swift_Message::newInstance()
                     ->setSubject('Contact site web')
                     ->setFrom('contact@eam69.fr')
-                    ->setTo('e.a.m.69@orange.fr')
+                    ->setTo('contact@eam69.fr')
                     ->setBody(
                         $this->renderView(
                             'EAMDefaultBundle:Email:email.txt.twig',
