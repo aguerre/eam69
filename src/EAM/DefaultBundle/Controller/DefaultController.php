@@ -231,6 +231,22 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/videos") 
+     * @Method({"GET", "POST"})
+     * @Template
+     */
+    public function videosAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('EAMDefaultBundle:Video');
+        $videos = $repository->findAll();
+
+        return array(
+            "videos" => $videos
+        );
+    }
+
+    /**
      * @Route("/articles") 
      * @Method({"GET", "POST"})
      * @Template
