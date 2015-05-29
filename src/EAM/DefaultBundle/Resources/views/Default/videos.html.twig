@@ -28,6 +28,7 @@
                         <div class="minus-margin">
                             <div class="row">
                                 <div class="span12">
+                                {% if videos is not empty %}
                                 {% for video in videos %}
                                     <article>
                                         <figure>
@@ -48,6 +49,7 @@
                                 <div class="span12">
                                     {% endif %}
                                 {% endfor %}
+                                {% endif %}
                                 </div>
                             </div>
                         </div>

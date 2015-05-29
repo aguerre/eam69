@@ -25,7 +25,10 @@ class VideosController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $videos = $em->getRepository('EAMDefaultBundle:Video')->findAll();
+        if (null === $videos = $em->getRepository('EAMDefaultBundle:Video')->findAll()) {
+            $videos = array();
+        }
+
         return array(
             'videos' => $videos
         );
