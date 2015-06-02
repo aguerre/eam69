@@ -74,13 +74,6 @@ class VideosController extends Controller
         $success = false;
         $form->handleRequest($request);
         if ($form->isValid()) {
-            $name = $video->getImage()->getClientOriginalName();
-
-            $uploader = new ImageUploader($this->container);
-            $uploader->upload($video->getImage());
-
-            $video->setImage($uploader->getUploadDir().'/'.$name);
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($video);
             $em->flush();
@@ -155,13 +148,6 @@ class VideosController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $name = $video->getImage()->getClientOriginalName();
-
-            $uploader = new ImageUploader($this->container);
-            $uploader->upload($video->getImage());
-
-            $video->setImage($uploader->getUploadDir().'/'.$name);
-
             $em = $this->getDoctrine()->getManager();
             $em->flush();
         }
