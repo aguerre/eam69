@@ -33,7 +33,7 @@
                                     <article>
                                         <figure>
                                             {% if video.lien is not empty %}
-                                                <iframe width="262" height="262" src="{{ video.lien~"&output=embed" }}" frameborder="0" allowfullscreen></iframe>
+                                                <iframe width="262" height="262" src="{{ video.lien|replace({'watch?v=': 'v/'}) }}" frameborder="0" allowfullscreen></iframe>
                                             {% endif %}
                                         </figure>
                                         <div class="text webkit">
