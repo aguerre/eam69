@@ -31,11 +31,9 @@
                                 {% if videos is not empty %}
                                 {% for video in videos %}
                                     <article>
-                                        <figure>
-                                            {% if video.lien is not empty %}
-                                                <iframe width="262" height="262" src="{{ video.lien|replace({'watch?v=': 'v/'}) }}" frameborder="0" allowfullscreen></iframe>
-                                            {% endif %}
-                                        </figure>
+                                        {% if video.lien is not empty %}
+                                            <iframe width="262" height="262" src="{{ video.lien|replace({'watch?v=': 'v/'}) }}" frameborder="0" allowfullscreen></iframe>
+                                        {% endif %}
                                         <div class="text webkit">
                                             <div class="left-sec">
                                                 <h3><a href="{{ video.lien }}">{{ video.nom }}</a></h3>
