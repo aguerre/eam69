@@ -17,6 +17,8 @@
     %}
         <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
     {% endstylesheets %}
+    {% block stylesheets %}
+    {% endblock %}
     {% javascripts
         '@EAMDefaultBundle/Resources/public/js/jquery-1.10.2.min.js'
     %}
