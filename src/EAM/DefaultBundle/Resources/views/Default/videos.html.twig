@@ -1,0 +1,67 @@
+{% extends 'EAMDefaultBundle::layout.html.twig' %}
+{% block body %}
+<!--- Wrapper Start -->
+<div class="wrapper">
+    {% include 'EAMDefaultBundle::header.html.twig' %}
+    <div class="clear"></div>
+    <!-- BreadCrumb Start -->
+    <div class="breadcrumb webkit">
+        <!-- Container Start -->
+        <div class="container">
+            <h1 class="color">Vidéos</h1>
+        </div>
+        <!-- Container End -->
+    </div>
+    <!-- BreadCrumb End -->
+    <div class="clear">
+    </div>
+    <!-- Content Start -->
+    <div class="content">
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Row Start -->
+            <div class="row">
+                <!-- Span12 Start -->
+                <div class="span12">
+                    <!-- Latest Album Start -->
+                    <div class="latest-album">
+                        <div class="minus-margin">
+                            <div class="row">
+                                <div class="span12">
+                                {% if videos is not empty %}
+                                {% for video in videos %}
+                                    <article>
+                                        {% if video.lien is not empty %}
+                                            <iframe width="262" height="262" src="{{ video.lien|replace({'watch?v=': 'v/'}) }}" frameborder="0" allowfullscreen></iframe>
+                                        {% endif %}
+                                        <div class="text webkit">
+                                            <div class="left-sec">
+                                                <h3><a href="{{ video.lien }}">{{ video.nom }}</a></h3>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    {% if loop.index is divisible by(3) %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="span12">
+                                    {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Latest Album End -->
+                </div>
+                <!-- Span12 End -->
+            </div>
+            <!-- Row End -->
+        </div>
+        <!-- Container End -->
+    </div>
+    <!-- Content End -->
+    {% include 'EAMDefaultBundle::footer.html.twig' %}
+</div>
+<!--- Wrapper End -->
+{% endblock %}

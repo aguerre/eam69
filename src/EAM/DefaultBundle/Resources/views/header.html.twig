@@ -63,9 +63,11 @@
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <li><a href="{{ path('eam_default_partenaires_all') }}">Partenaires</a></li>
                     <li><a href="{{ path('eam_default_articles_all') }}">Articles</a></li>
+                    <li><a href="{{ path('eam_default_videos_all') }}">Vidéos</a></li>
                 {% else %}
                     <li><a href="{{ path('eam_default_default_partenaires') }}">Partenaires</a></li>
                     <li><a href="{{ path('eam_default_default_articles') }}">Articles</a></li>
+                    <li><a href="{{ path('eam_default_default_videos') }}">Vidéos</a></li>
                 {% endif %}
                 <li><a href="{{ path('eam_default_default_contact') }}">Contact</a></li>
             </ul>

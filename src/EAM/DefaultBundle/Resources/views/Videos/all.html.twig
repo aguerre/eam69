@@ -1,0 +1,84 @@
+{% extends 'EAMDefaultBundle::layout.html.twig' %}
+{% block body %}
+<!--- Wrapper Start -->
+<div class="wrapper">
+    {% include 'EAMDefaultBundle::header.html.twig' %}
+    <div class="clear"></div>
+    <!-- BreadCrumb Start -->
+    <div class="breadcrumb webkit">
+        <!-- Container Start -->
+        <div class="container">
+            <h1 class="color">Liste des vidéos</h1>
+        </div>
+        <!-- Container End -->
+    </div>
+    <!-- BreadCrumb End -->
+    <div class="clear">
+    </div>
+    <!-- Content Start -->
+    <div class="content">
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Row Start -->
+            <div class="row">
+                <!-- Span12 Start -->
+                <div class="span12">
+                    <!-- Latest Album Start -->
+                    <div class="latest-album">
+                        <div class="heading"><h2><a href="{{ path('eam_default_videos_addvideo') }}"><span class="color">Créer Partenaire</span></a></h2></div>
+                        <div class="minus-margin">
+                            <div class="row">
+                                <div class="span12">
+                                {% if videos is not empty %}
+                                {% for video in videos %}
+                                    <article>
+                                        <figure>
+                                            <iframe width="262" height="262" src="{{ video.lien }}" frameborder="0" allowfullscreen></iframe>
+                                        </figure>
+                                        <div class="text webkit">
+                                            <div class="left-sec">
+                                                <h3><a href="{{ path('eam_default_videos_editvideo', {'id': video.id }) }}">{{ video.nom }}</a></h3>
+                                                {% if video.lien is not empty %}
+                                                <a href="{{ video.lien }}">Lire la vidéo sur youtube</a>
+                                                {% endif %}
+                                            </div>
+                                            <a class="icon-plus webkit" href="{{ path('eam_default_videos_deletevideo', {'id': video.id }) }}">X</a>
+                                        </div>
+                                    </article>
+                                    {% if loop.index is divisible by(3) %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="span12">
+                                    {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Latest Album End -->
+                    <!-- Pagination Start -->
+                    <nav class="pagination">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        </ul>
+                    </nav>
+                    <!-- Pagination End -->
+                </div>
+                <!-- Span12 End -->
+            </div>
+            <!-- Row End -->
+        </div>
+        <!-- Container End -->
+    </div>
+    <!-- Content End -->
+    {% include 'EAMDefaultBundle::footer.html.twig' %}
+</div>
+<!--- Wrapper End -->
+{% endblock %}

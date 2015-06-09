@@ -75,8 +75,8 @@ class DefaultController extends Controller
 
             $message = \Swift_Message::newInstance()
                     ->setSubject('Contact site web')
-                    ->setFrom($model->getEmail())
-                    ->setTo('e.a.m.69@orange.fr')
+                    ->setFrom('contact@eam69.fr')
+                    ->setTo('contact@eam69.fr')
                     ->setBody(
                         $this->renderView(
                             'EAMDefaultBundle:Email:email.txt.twig',
@@ -227,6 +227,22 @@ class DefaultController extends Controller
 
         return array(
             "partenaires" => $partenaires
+        );
+    }
+
+    /**
+     * @Route("/videos") 
+     * @Method({"GET", "POST"})
+     * @Template
+     */
+    public function videosAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('EAMDefaultBundle:Video');
+        $videos = $repository->findAll();
+
+        return array(
+            "videos" => $videos
         );
     }
 
