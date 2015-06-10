@@ -1,4 +1,5 @@
 {% extends 'EAMDefaultBundle::layout.html.twig' %}
+
 {% block body %}
 <!--- Wrapper Start -->
 <div class="wrapper">
@@ -20,7 +21,7 @@
                             <article>
                                 <figure>
                                     <a href="#"><img src="{{ image.url }}" alt=""></a>
-                                    <figcaption><a data-rel="prettyPhoto[]" rel="prettyPhoto[]" href="" class="color webkit">+</a></figcaption>
+                                    <figcaption><a data-rel="prettyPhoto" rel="prettyPhoto" href="{{ image.url }}" class="color webkit">+</a></figcaption>
                                 </figure>
                             </article>
                             {% endfor %}

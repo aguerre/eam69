@@ -207,15 +207,10 @@ jQuery( document ).ready(function($) {
 	/* ---------------------------------------------------------------------- */
 	
 	if($('.kf-gallery-pp').length){
-		$(".kf-gallery-pp:first a[rel^='prettyPhoto']").prettyPhoto({
+		$("a[rel^='prettyPhoto']").prettyPhoto({
 			animation_speed: 'normal',
 			slideshow: 10000,
 			autoplay_slideshow: true
-		});
-		$(".kf-gallery-pp:gt(0) a[rel^='prettyPhoto']").prettyPhoto({
-			animation_speed: 'fast',
-			slideshow: 10000,
-			hideflash: true
 		});
 	}
 	
