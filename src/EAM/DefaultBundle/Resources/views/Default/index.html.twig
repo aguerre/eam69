@@ -59,7 +59,7 @@
                             </article>
                             <article>
                                 <figure>
-                                    <a href="{{ path('eam_default_default_palmares') }}"><i class="fa fa-star"></i></a>
+                                    <a href="{{ path('eam_default_default_palmares') }}"><i class="fa fa-trophy"></i></a>
                                     <figcaption>
                                         <a href="{{ path('eam_default_default_palmares') }}"></a>
                                     </figcaption>
@@ -73,7 +73,7 @@
                             </article>
                             <article>
                                 <figure>
-                                    <a href="{{ path('eam_default_default_records') }}"><i class="fa fa-trophy"></i></a>
+                                    <a href="{{ path('eam_default_default_records') }}"><i class="fa fa-clock-o"></i></a>
                                     <figcaption>
                                         <a href="{{ path('eam_default_default_records') }}"></a>
                                     </figcaption>
@@ -90,8 +90,7 @@
                     <!-- Featured End -->
                 </div>
                 <!-- Span12 End -->
-                <!-- Span4 Start -->
-                <div class="span4">
+
                     {% if article is defined and article is not empty %}
                     <div class="heading"><h2><span class="color">Dernier </span> article</h2></div>
                     <div class="blog-v2 webkit slide-view">
@@ -114,32 +113,14 @@
                         </article>
                     </div>
                     {% endif %}
-                </div>
-                <!-- Span4 Start -->
                 <!-- Span12 Start -->
                 <div class="span12">
-                    <!-- Upcooming Event Start -->
+                    <!--
+                    PROCHAIN EVENEMENT 
+                    -->
                     <div class="upcoming-event">
                         <div class="heading"><h2><span class="color">Événement</span> à venir</h2></div>
                         <div class="minus-margin">
-                            {% if article is not empty %}
-                            <article>
-                                <div class="top-text">
-                                    <h3>{{ article.titre }}</h3>
-                                    <p>{{ article.contenu|raw }}</p>
-                                </div>
-                                <div class="bottom-text">
-                                    <figure><a href="event-detail.html"><img src="images/event1.jpg" alt=""></a></figure>
-                                    <div class="sec webkit">
-                                        <div class="desc-head">
-                                            <ul>
-                                                <li><span class="color">Quand</span> <p>{{ article.date }}</p></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            {% endif %}
                             <article>
                                 <div class="top-text">
                                     <h3>Melbourne City Hall</h3>
@@ -160,7 +141,9 @@
                             </article>
                         </div>
                     </div>
-                    <!-- Upcooming Event End -->
+                    <!-- 
+                    FIN PROCHAIN EVENEMENT
+                    -->
                 </div>
                 <!-- Span12 End -->
             </div>

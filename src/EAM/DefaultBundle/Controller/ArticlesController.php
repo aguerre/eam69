@@ -7,7 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use EAM\DefaultBundle\Entity\Article;
-use EAM\DefaultBundle\Form\Model\Article as Farticle;
+use EAM\DefaultBundle\Form\Model\Article as FArticle;
 use EAM\DefaultBundle\Form\Type\ArticleType;
 use EAM\DefaultBundle\Form\Type\ArticleEditType;
 use EAM\DefaultBundle\Uploader\ImageUploader;
