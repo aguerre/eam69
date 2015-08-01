@@ -14,6 +14,8 @@
                 <div class="row span12">
                     <h3>{{ article.titre }} - le {{ article.date|date('d/m/Y') }}</h3>
                     <a href="{{ path('eam_default_articles_voir', { 'id': article.id })}}">Voir</a>
+                    <a href="{{ path('eam_default_articles_modifier', { 'id': article.id })}}">Modifier</a>
+                    <a href="{{ path('eam_default_articles_supprimer', { 'id': article.id })}}">Supprimer</a>
                 </div>
                 {% endfor %}
             </div>
