@@ -20,7 +20,7 @@ class DefaultController extends Controller
     {
         $repoArticle = $this->getDoctrine()->getManager()->getRepository('EAMDefaultBundle:Article');
         $repoPartenaire = $this->getDoctrine()->getManager()->getRepository('EAMDefaultBundle:Partenaire');
-        $article = $repoArticle->findBy(["publication" => "true"], ["date" => "DESC"]);
+        $article = $repoArticle->findOneBy(["publication" => true], ["date" => "DESC"]);
         $partenaires = $repoPartenaire->findAll();
 
         return array(
