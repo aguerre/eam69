@@ -13,7 +13,7 @@ use EAM\DefaultBundle\Form\Type\ArticleEditType;
 use EAM\DefaultBundle\Uploader\ImageUploader;
 
 /**
- * @Route("/articles")
+ * @Route("/admin/articles")
  */
 class ArticlesController extends Controller
 {
@@ -67,7 +67,7 @@ class ArticlesController extends Controller
      *            "id"="\d+"
      *        }
      * )
-     * @Template("EAMDefaultBundle:Articles:modifier.html.twig")
+     * @Template("EAMDefaultBundle:Articles:ajouter.html.twig")
      * @Method({"GET"})
      */
     public function modifierAction(Request $request, $id)
@@ -148,7 +148,6 @@ class ArticlesController extends Controller
      *            "id"="\d+"
      *        },
      * )
-     * @Template
      * @Method({"GET"})
      */
     public function supprimerAction($id)
@@ -158,41 +157,17 @@ class ArticlesController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $repository = $em->getRepository('EAMDefaultBundle:Article');
-        $article = $repository->find($id);
+        $article = $repository->findOneBy(['id' => $id]);
 
         if ($article === null) {
             throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
         }
-
-        return array(
-            'article' => $article,
-            'form'    => $form->createView()
-        );
-    }
-
-    /**
-     * @Route(path="/supprimer/{id}", requirements={
-     *      "id"="\d+"
-     * })
-     * @Template
-     * @Method({"POST"})
-     */
-    public function supprimerPostAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $repository = $em->getRepository('EAMDefaultBundle:Article');
-        $article = $repository->find($id);
-
-        if ($article === null) {
-            throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
-        }
-        $this->get('session')->getFlashBag()->add('info', 'Article bien supprimé');
 
         // Ici, on gérera la suppression de l'article en question
         $em->remove($article);
         $em->flush();
 
-        return $this->redirect( $this->generateUrl('accueil') );
+        return $this->redirect($this->generateUrl('eam_default_articles_all'));
     }
 
     /**

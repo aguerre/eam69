@@ -15,6 +15,7 @@
             </ul>
         </div>
     </div>
+
     <!--- Banner End -->
     <div class="clear"></div>
     <!-- Content Start -->
@@ -92,8 +93,8 @@
                     <!-- Featured End -->
                 </div>
                 <!-- Span12 End -->
-
-                    {% if article is defined and article is not empty %}
+                {% if article is defined and article is not null %}
+                <div class="span12">
                     <div class="heading"><h2><span class="color">Dernier </span> article</h2></div>
                     <div class="blog-v2 webkit slide-view">
                         <article class="featured">
@@ -110,24 +111,24 @@
                                         </li>
                                     </ul>
                                 </div>
-                            <figcaption class="bgcolor">20 <span>May</span></figcaption>
+                            <figcaption class="bgcolor">{{ article.date|date('d') }} <span>{{ article.date|date('M') }}</span></figcaption>
                             </figure>
                         </article>
                     </div>
-                    {% endif %}
+                </div>
+                {% endif %}
                 <!-- Span12 Start -->
                 <div class="span12">
                     <!--
                     PROCHAIN EVENEMENT 
                     -->
                     <div class="upcoming-event">
-                        <div class="heading"><h2><span class="color">Événement</span> à venir</h2></div>
+                        <div class="heading"><h2><span class="color">Prochain </span> Événement</h2></div>
                         <div class="minus-margin">
                             <article>
                                 <div class="top-text">
                                     <h3>Melbourne City Hall</h3>
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
-                                    <a class="bgcolor" href="event-detail.html">More</a>
                                 </div>
                                 <div class="bottom-text">
                                     <figure><a href="event-detail.html"><img src="images/event1.jpg" alt=""></a></figure>
@@ -143,6 +144,7 @@
                             </article>
                         </div>
                     </div>
+
                     <!-- 
                     FIN PROCHAIN EVENEMENT
                     -->
@@ -156,7 +158,6 @@
         <div class="parallex-count margin-bottom" data-speed="2" data-type="background">
             <!-- Container Start -->
             <div class="container">
-                <div class="heading"><h2><span class="color">Prochain </span> Événement</h2></div>
                 <div id="DateCountdown" class="date-count-down" data-date="2015-12-12 00:00:00" data-tc-id="849b7d22-3517-3c4f-928d-972d6ba71559"></div>
             </div>
             <!-- Container End -->
