@@ -32,7 +32,7 @@
                         <div class="minus-margin">
                             <article>
                                 <figure>
-                                    <a href="#"><i class="fa fa-camera"></i></a>
+                                    <a href="{{ path('eam_default_default_albumsinannee', {'annee': 'now'|date('Y') }) }}"><i class="fa fa-camera"></i></a>
                                     <figcaption>
                                         <a href="{{ path('eam_default_default_albumsinannee', {'annee': 'now'|date('Y') }) }}"></a>
                                     </figcaption>
@@ -45,42 +45,43 @@
                                 </div>
                             </article>
                             <article>
+                                <a href="{{ path('eam_default_default_resultatsanneeencours') }}">
                                 <figure>
-                                    <a href="{{ path('eam_default_default_resultats') }}"><i class="fa fa-university"></i></a>
+                                    <a href="{{ path('eam_default_default_resultatsanneeencours') }}"><i class="fa fa-university"></i></a>
                                     <figcaption>
-                                        <a href="{{ path('eam_default_default_resultats') }}"></a>
                                     </figcaption>
                                 </figure>
+                                </a>
                                 <div class="user-text">
                                     <div class="sec">
-                                        <h4><a href="{{ path('eam_default_default_resultats') }}">Résultats</a></h4>
+                                        <h4><a href="{{ path('eam_default_default_resultatsanneeencours') }}">Résultats</a></h4>
                                         <p></p>
                                     </div>
                                 </div>
                             </article>
-                            <a href="{{ path('eam_default_default_palmares') }}">
                             <article>
+                                <a href="{{ path('eam_default_default_palmaresanneeencours') }}">
                                 <figure>
-                                    <a href="{{ path('eam_default_default_palmares') }}"><i class="fa fa-trophy"></i></a>
+                                    <a href="{{ path('eam_default_default_palmaresanneeencours') }}"><i class="fa fa-trophy"></i></a>
                                     <figcaption>
-                                            
                                     </figcaption>
                                 </figure>
+                                </a>
                                 <div class="user-text">
                                     <div class="sec">
-                                        <h4><a href="{{ path('eam_default_default_palmares') }}">Palmarès</a></h4>
+                                        <h4><a href="{{ path('eam_default_default_palmaresanneeencours') }}">Palmarès</a></h4>
                                         <p></p>
                                     </div>
                                 </div>
                             </article>
-                            </a>
                             <article>
+                                <a href="{{ path('eam_default_default_records') }}">
                                 <figure>
                                     <a href="{{ path('eam_default_default_records') }}"><i class="fa fa-clock-o"></i></a>
                                     <figcaption>
-                                        <a href="{{ path('eam_default_default_records') }}"></a>
                                     </figcaption>
                                 </figure>
+                                </a>
                                 <div class="user-text">
                                     <div class="sec">
                                         <h4><a href="{{ path('eam_default_default_records') }}">Records</a></h4>

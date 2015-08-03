@@ -1,0 +1,31 @@
+{% extends 'EAMDefaultBundle::layout.html.twig' %}
+{% block body %}
+<div class="wrapper">
+    {% include 'EAMDefaultBundle::header.html.twig' %}
+    <div class="clear"></div>
+    <!-- BreadCrumb Start -->
+    <div class="breadcrumb webkit">
+        <!-- Container Start -->
+        <div class="container">
+            <h1 class="color">Palmarès</h1>
+        </div>
+        <!-- Container End -->
+    </div>
+    <!-- BreadCrumb End -->
+    <div class="clear">
+    </div>
+    <!-- Content Start -->
+    <div class="content">
+        <div class="container">
+            <div class="heading"><h2><span class="color">Année </span>2015</h2></div>
+            <div class="row">
+                <div class="span12 tabs margin-bt">
+                    <p>Stade Champion     Régional 5000M marche en 27’48″92 .le 31/05/15 LYON.</p>
+                    <p>Salle 3ème (place) Régional 5000M marche en 28’11″72 .le 11/01/15 LYON.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'EAMDefaultBundle::footer.html.twig' %}
+{% endblock %}

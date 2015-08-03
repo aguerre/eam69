@@ -195,11 +195,31 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/palmares-annee-en-cours")
+     * @Method({"GET", "POST"})
+     * @Template
+     */
+    public function palmaresAnneeEnCoursAction(Request $request)
+    {
+        return array();
+    }
+
+    /**
      * @Route("/resultats") 
      * @Method({"GET", "POST"})
      * @Template
      */
     public function resultatsAction(Request $request)
+    {
+        return array();
+    }
+
+    /**
+     * @Route("/resultats-annee-en-cours")
+     * @Method({"GET", "POST"})
+     * @Template
+     */
+    public function resultatsAnneeEnCoursAction(Request $request)
     {
         return array();
     }
