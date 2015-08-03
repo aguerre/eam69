@@ -1,5 +1,11 @@
 {% extends 'EAMDefaultBundle::layout.html.twig' %}
-
+{% block stylesheets %}
+    {% stylesheets
+        '@EAMDefaultBundle/Resources/public/plugins/fancybox/jquery.fancybox.css'
+    %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
 {% block body %}
 <!--- Wrapper Start -->
 <div class="wrapper">
@@ -21,7 +27,7 @@
                             <article>
                                 <figure>
                                     <a href="#"><img src="{{ image.url }}" alt=""></a>
-                                    <figcaption><a data-rel="prettyPhoto" rel="prettyPhoto" href="{{ image.url }}" class="color webkit">+</a></figcaption>
+                                    <figcaption><a data-rel="prettyPhoto" rel="prettyPhoto" href="{{ image.url }}" class="fancybox color webkit">+</a></figcaption>
                                 </figure>
                             </article>
                             {% endfor %}
@@ -51,4 +57,11 @@
     {% include 'EAMDefaultBundle::footer.html.twig' %}
 </div>
 <!--- Wrapper End -->
+{% endblock %}
+{% block javascripts %}
+        {% javascripts
+            '@EAMDefaultBundle/Resources/public/plugins/fancybox/*'
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
 {% endblock %}
