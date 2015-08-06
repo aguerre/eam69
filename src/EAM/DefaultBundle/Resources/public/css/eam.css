@@ -45,3 +45,19 @@ article figure a i:before {
     width: 40.5%;
     margin-right: 25px;
 }
+
+.featured-artist article:hover figure figcaption {
+    background: none;
+}
+
+.user-text .sec {
+    padding-left: 0;
+}
+.user-text .sec h4 {
+   text-align: center;
+}
+
+.user-text a {
+    display: block;
+    color: white;
+}

@@ -32,61 +32,56 @@
                         <div class="minus-margin">
                             <article>
                                 <figure>
-                                    <a href="{{ path('eam_default_default_albumsinannee', {'annee': 'now'|date('Y') }) }}"><i class="fa fa-camera"></i></a>
+                                    <a href="{{ path('eam_default_default_albumsinannee', {'annee': 'now'|date('Y') }) }}"><i class="fa fa-camera"></i>
                                     <figcaption>
-                                        <a href="{{ path('eam_default_default_albumsinannee', {'annee': 'now'|date('Y') }) }}"></a>
                                     </figcaption>
+                                    </a>
                                 </figure>
                                 <div class="user-text">
-                                    <div class="sec">
-                                        <h4><a href="{{ path('eam_default_default_albumsinannee', {'annee': 'now'|date('Y') }) }}">Photos</a></h4>
-                                        <p></p>
-                                    </div>
+                                    <a href="{{ path('eam_default_default_albumsinannee', {'annee': 'now'|date('Y') }) }}" class="sec">
+                                        <h4>Photos</h4>
+                                    </a>
                                 </div>
                             </article>
                             <article>
-                                <a href="{{ path('eam_default_default_resultatsanneeencours') }}">
                                 <figure>
-                                    <a href="{{ path('eam_default_default_resultatsanneeencours') }}"><i class="fa fa-university"></i></a>
+                                    <a href="{{ path('eam_default_default_resultatsanneeencours') }}"><i class="fa fa-university"></i>
                                     <figcaption>
                                     </figcaption>
+                                    </a>
                                 </figure>
-                                </a>
                                 <div class="user-text">
-                                    <div class="sec">
-                                        <h4><a href="{{ path('eam_default_default_resultatsanneeencours') }}">Résultats</a></h4>
-                                        <p></p>
-                                    </div>
+                                    <a href="{{ path('eam_default_default_resultatsanneeencours') }}" class="sec">
+                                        <h4>Résultats</h4>
+                                    </a>
                                 </div>
                             </article>
                             <article>
-                                <a href="{{ path('eam_default_default_palmaresanneeencours') }}">
                                 <figure>
-                                    <a href="{{ path('eam_default_default_palmaresanneeencours') }}"><i class="fa fa-trophy"></i></a>
+                                    <a href="{{ path('eam_default_default_palmaresanneeencours') }}"><i class="fa fa-trophy"></i>
                                     <figcaption>
                                     </figcaption>
+                                    </a>
                                 </figure>
-                                </a>
                                 <div class="user-text">
-                                    <div class="sec">
-                                        <h4><a href="{{ path('eam_default_default_palmaresanneeencours') }}">Palmarès</a></h4>
-                                        <p></p>
-                                    </div>
+                                    <a href="{{ path('eam_default_default_palmaresanneeencours') }}" class="sec">
+                                        <h4>Palmarès</h4>
+                                    </a>
                                 </div>
                             </article>
                             <article>
                                 <a href="{{ path('eam_default_default_records') }}">
                                 <figure>
-                                    <a href="{{ path('eam_default_default_records') }}"><i class="fa fa-clock-o"></i></a>
+                                    <a href="{{ path('eam_default_default_records') }}"><i class="fa fa-clock-o"></i>
                                     <figcaption>
                                     </figcaption>
+                                    </a>
                                 </figure>
                                 </a>
                                 <div class="user-text">
-                                    <div class="sec">
-                                        <h4><a href="{{ path('eam_default_default_records') }}">Records</a></h4>
-                                        <p></p>
-                                    </div>
+                                    <a href="{{ path('eam_default_default_records') }}" class="sec">
+                                        <h4>Records</h4>
+                                    </a>
                                 </div>
                             </article>
                         </div>
@@ -105,14 +100,16 @@
                                         <li>
                                             <div class="clear"></div>
                                             <div class="text">
-                                                <h3><a href="blog-detail.html" class="colorhover">{{ article.titre }}</a></h3>
+                                                <h3>
+                                                    <figcaption class="bgcolor">{{ article.date|date('d') }} <span>{{ article.date|date('M') }}</span></figcaption>
+                                                    <a href="" class="colorhover">{{ article.titre }}</a>
+                                                </h3>
                                                 <p>{{ article.contenu }}</p>
                                                 <!-- <a class="bgcolor nr-readmore" href="">Lire l'article</a> -->
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
-                            <figcaption class="bgcolor">{{ article.date|date('d') }} <span>{{ article.date|date('M') }}</span></figcaption>
                             </figure>
                         </article>
                     </div>
