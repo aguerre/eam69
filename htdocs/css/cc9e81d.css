@@ -6728,3 +6728,8 @@ article figure a i:before {
     display: block;
     color: white;
 }
+
+.featured h3 figcaption {
+    position: relative;
+    float: left;
+}
