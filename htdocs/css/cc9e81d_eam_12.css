@@ -29,3 +29,40 @@ article figure a i:before {
     color: #aaaaaa;
     font-size: 74px;
 }
+
+.upcoming-event article {
+    width: 100%;
+}
+
+.upcoming-event div h2 {
+    font-weight: bold;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.bottom-text .sec {
+    width: 40.5%;
+    margin-right: 25px;
+}
+
+.featured-artist article:hover figure figcaption {
+    background: none;
+}
+
+.user-text .sec {
+    padding-left: 0;
+}
+.user-text .sec h4 {
+   text-align: center;
+}
+
+.user-text a {
+    display: block;
+    color: white;
+}
+
+.featured h3 figcaption {
+    position: relative;
+    float: left;
+}

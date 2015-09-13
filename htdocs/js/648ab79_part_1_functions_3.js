@@ -49,9 +49,9 @@ jQuery( document ).ready(function($) {
             // animation: "fade"
         // });
     // }    
-    // if($('.slides').length){
-    //     $('.slides').bxSlider();
-    // }
+    if($('.slides').length){
+        $('.slides').bxSlider();
+    }
     
     
     /* ---------------------------------------------------------------------- */

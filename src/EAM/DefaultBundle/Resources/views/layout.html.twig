@@ -21,6 +21,7 @@
     {% endblock %}
     {% javascripts
         '@EAMDefaultBundle/Resources/public/js/jquery-1.10.2.min.js'
+        '@EAMDefaultBundle/Resources/public/js/bootstrap.min.js'
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -34,7 +35,13 @@
         {% endblock %}
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
         {% javascripts
-            '@EAMDefaultBundle/Resources/public/js/*'
+            '@EAMDefaultBundle/Resources/public/plugins/*'
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% javascripts
+            '@EAMDefaultBundle/Resources/public/js/functions.js'
+            '@EAMDefaultBundle/Resources/public/js/functions.js'
         %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
