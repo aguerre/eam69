@@ -6733,3 +6733,11 @@ article figure a i:before {
     position: relative;
     float: left;
 }
+
+.gallery-page article {
+    height: 230px;
+}
+.gallery-page article figure img
+{
+    max-height: 220px;
+}
