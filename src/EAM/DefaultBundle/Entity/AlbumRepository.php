@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class AlbumRepository extends EntityRepository
 {
+
+    public function findAllByDescYear()
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->orderBy('a.date', 'DESC')
+            ->getQuery()
+        ;
+
+        return $qb->getResult();
+    }
 }

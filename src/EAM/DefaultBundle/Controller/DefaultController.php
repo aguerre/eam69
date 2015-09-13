@@ -108,7 +108,7 @@ class DefaultController extends Controller
     public function albumsAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $albums = $em->getRepository('EAMDefaultBundle:Album')->findAll();
+        $albums = $em->getRepository('EAMDefaultBundle:Album')->findAllByDescYear();
 
         return array(
             'albums' => $albums,
